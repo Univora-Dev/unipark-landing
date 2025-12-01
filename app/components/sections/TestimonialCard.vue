@@ -29,7 +29,7 @@ const props = defineProps<Props>()
 
       <div class="flex items-center gap-4 pt-4 border-t border-dark-200">
         <div
-          class="w-12 h-12 rounded-full bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center text-white font-heading font-bold flex-shrink-0"
+          class="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center text-primary-600 font-heading font-bold flex-shrink-0"
         >
           {{ testimonial.name.charAt(0) }}
         </div>

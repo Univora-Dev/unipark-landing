@@ -20,9 +20,9 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 const sizeClasses = {
-  sm: 'px-4 py-2 text-sm',
-  md: 'px-6 py-3 text-base',
-  lg: 'px-8 py-4 text-lg'
+  sm: 'px-4 py-2 text-sm md:px-5 md:py-2.5',
+  md: 'px-6 py-2.5 text-base md:px-7 md:py-3',
+  lg: 'px-7 py-3 text-base md:px-8 md:py-3.5 md:text-lg'
 }
 
 const variantClasses = {

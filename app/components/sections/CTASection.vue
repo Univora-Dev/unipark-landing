@@ -6,13 +6,11 @@ interface Props {
   buttonIcon?: string
   secondaryButtonText?: string
   secondaryButtonIcon?: string
-  backgroundGradient?: string
 }
 
 const props = withDefaults(defineProps<Props>(), {
   buttonText: 'Начать',
-  buttonIcon: 'lucide:rocket',
-  backgroundGradient: 'from-primary-600 to-accent-600'
+  buttonIcon: 'lucide:rocket'
 })
 
 const emit = defineEmits<{
@@ -23,22 +21,18 @@ const emit = defineEmits<{
 
 <template>
   <section
-    :class="[
-      'py-20 px-4 md:px-8',
-      'bg-gradient-to-r',
-      backgroundGradient
-    ]"
+    class="py-20 px-4 md:px-8 bg-blue-50"
   >
     <div class="container-custom">
       <div class="max-w-4xl mx-auto text-center">
         <ScrollReveal>
-          <h2 class="text-4xl md:text-5xl font-heading font-bold text-white mb-6">
+          <h2 class="text-4xl md:text-5xl font-heading font-bold text-dark-900 mb-6">
             {{ title }}
           </h2>
         </ScrollReveal>
 
         <ScrollReveal v-if="subtitle" :delay="200">
-          <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+          <p class="text-xl text-dark-700 mb-8 max-w-2xl mx-auto">
             {{ subtitle }}
           </p>
         </ScrollReveal>
@@ -46,10 +40,9 @@ const emit = defineEmits<{
         <ScrollReveal :delay="300">
           <div class="flex flex-wrap gap-4 justify-center">
             <Button
-              variant="accent"
+              variant="primary"
               size="lg"
               :icon="buttonIcon"
-              class="bg-white text-primary-600 hover:bg-white/90"
               @click="emit('buttonClick')"
             >
               {{ buttonText }}
@@ -60,7 +53,6 @@ const emit = defineEmits<{
               variant="outline"
               size="lg"
               :icon="secondaryButtonIcon"
-              class="border-white text-white hover:bg-white/10"
               @click="emit('secondaryClick')"
             >
               {{ secondaryButtonText }}

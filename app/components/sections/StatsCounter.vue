@@ -9,7 +9,7 @@ interface Props {
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  backgroundColor: 'bg-gradient-to-br from-primary-600 to-primary-800'
+  backgroundColor: 'bg-gray-50'
 })
 </script>
 
@@ -18,12 +18,12 @@ const props = withDefaults(defineProps<Props>(), {
     <div class="container-custom">
       <div v-if="title || subtitle" class="text-center mb-16">
         <ScrollReveal v-if="title">
-          <h2 class="text-4xl md:text-5xl font-heading font-bold text-white mb-4">
+          <h2 class="text-4xl md:text-5xl font-heading font-bold text-dark-900 mb-4">
             {{ title }}
           </h2>
         </ScrollReveal>
         <ScrollReveal v-if="subtitle" :delay="200">
-          <p class="text-xl text-white/90 max-w-2xl mx-auto">
+          <p class="text-xl text-dark-600 max-w-2xl mx-auto">
             {{ subtitle }}
           </p>
         </ScrollReveal>
@@ -35,15 +35,15 @@ const props = withDefaults(defineProps<Props>(), {
           :key="stat.label"
           :delay="100 * index"
         >
-          <div class="text-center">
-            <div class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white mb-3">
+          <div class="text-center bg-white rounded-2xl p-8 border border-gray-200 hover:border-primary hover:shadow-lg transition-all duration-300">
+            <div class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary mb-3">
               <CounterAnimation
                 :target="stat.value"
                 :suffix="stat.suffix"
                 :prefix="stat.prefix"
               />
             </div>
-            <p class="text-base md:text-lg text-white/80">
+            <p class="text-base md:text-lg text-dark-600 font-medium">
               {{ stat.label }}
             </p>
           </div>

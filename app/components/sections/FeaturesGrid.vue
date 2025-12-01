@@ -23,16 +23,16 @@ const gridClasses = computed(() => {
 </script>
 
 <template>
-  <section class="py-20 px-4 md:px-8 bg-white">
+  <section class="section px-4 md:px-8 bg-white">
     <div class="container-custom">
-      <div v-if="title || subtitle" class="text-center mb-16">
+      <div v-if="title || subtitle" class="text-center mb-12 md:mb-16">
         <ScrollReveal v-if="title">
-          <h2 class="text-4xl md:text-5xl font-heading font-bold text-dark-900 mb-4">
+          <h2 class="section-title">
             {{ title }}
           </h2>
         </ScrollReveal>
         <ScrollReveal v-if="subtitle" :delay="200">
-          <p class="text-xl text-dark-600 max-w-2xl mx-auto">
+          <p class="section-subtitle">
             {{ subtitle }}
           </p>
         </ScrollReveal>
@@ -47,7 +47,7 @@ const gridClasses = computed(() => {
           <Card class="h-full hover:shadow-xl transition-shadow duration-300">
             <div class="text-center">
               <div
-                class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-primary-100 to-accent-100 flex items-center justify-center"
+                class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-blue-50 flex items-center justify-center"
               >
                 <Icon
                   :name="feature.icon"

@@ -115,7 +115,7 @@ const testimonials: Testimonial[] = [
 <template>
   <div>
     <!-- Hero Section -->
-    <section class="py-20 px-4 md:px-8 bg-gradient-to-br from-primary-50 to-accent-50">
+    <section class="py-20 px-4 md:px-8 bg-blue-50">
       <div class="container-custom text-center">
         <ScrollReveal>
           <h1 class="text-5xl md:text-6xl font-heading font-bold text-dark-900 mb-6">
@@ -140,6 +140,62 @@ const testimonials: Testimonial[] = [
             :delay="100 * (index % 3)"
           >
             <CaseStudyCard :case-study="caseStudy" />
+          </ScrollReveal>
+        </div>
+      </div>
+    </section>
+
+    <!-- Real Implementation Examples -->
+    <section class="py-20 px-4 md:px-8 bg-dark-50">
+      <div class="container-custom">
+        <div class="text-center mb-16">
+          <ScrollReveal>
+            <h2 class="text-4xl md:text-5xl font-heading font-bold text-dark-900 mb-4">
+              Реальные внедрения
+            </h2>
+          </ScrollReveal>
+          <ScrollReveal :delay="200">
+            <p class="text-xl text-dark-600 max-w-2xl mx-auto">
+              Посмотрите, как UniPark работает у наших клиентов
+            </p>
+          </ScrollReveal>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <ScrollReveal :delay="0">
+            <div class="relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
+              <NuxtImg
+                src="/images/screenshots/5.jpg"
+                alt="Внедрение в торговом центре"
+                class="w-full h-auto"
+                loading="lazy"
+                format="webp"
+              />
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal :delay="100">
+            <div class="relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
+              <NuxtImg
+                src="/images/screenshots/6.jpg"
+                alt="Система в бизнес-центре"
+                class="w-full h-auto"
+                loading="lazy"
+                format="webp"
+              />
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal :delay="200">
+            <div class="relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
+              <NuxtImg
+                src="/images/screenshots/1.jpg"
+                alt="Панель аналитики"
+                class="w-full h-auto"
+                loading="lazy"
+                format="webp"
+              />
+            </div>
           </ScrollReveal>
         </div>
       </div>

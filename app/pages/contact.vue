@@ -58,7 +58,7 @@ const workingHours = [
 <template>
   <div>
     <!-- Hero Section -->
-    <section class="py-20 px-4 md:px-8 bg-gradient-to-br from-primary-50 to-accent-50">
+    <section class="py-20 px-4 md:px-8 bg-blue-50">
       <div class="container-custom text-center">
         <ScrollReveal>
           <h1 class="text-5xl md:text-6xl font-heading font-bold text-dark-900 mb-6">
@@ -88,7 +88,7 @@ const workingHours = [
             >
               <Card class="h-full text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                 <div class="p-6">
-                  <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-primary-100 to-accent-100 flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-blue-50 flex items-center justify-center group-hover:scale-110 transition-transform">
                     <Icon :name="info.icon" class="w-8 h-8 text-primary-600" />
                   </div>
                   <h3 class="text-lg font-heading font-bold text-dark-900 mb-2">

@@ -17,7 +17,7 @@ const emit = defineEmits<{
     class="group cursor-pointer h-full hover:shadow-2xl transition-all duration-300 overflow-hidden"
     @click="emit('click', caseStudy)"
   >
-    <div class="relative overflow-hidden aspect-video bg-gradient-to-br from-primary-100 to-accent-100">
+    <div class="relative overflow-hidden aspect-video bg-blue-50">
       <NuxtImg
         v-if="caseStudy.image"
         :src="caseStudy.image"

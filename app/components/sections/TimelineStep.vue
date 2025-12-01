@@ -17,13 +17,13 @@ const props = withDefaults(defineProps<Props>(), {
     <!-- Timeline line -->
     <div class="flex flex-col items-center">
       <div
-        class="w-12 h-12 rounded-full bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center text-white font-heading font-bold text-lg flex-shrink-0"
+        class="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center text-primary-600 font-heading font-bold text-lg flex-shrink-0"
       >
         {{ number }}
       </div>
       <div
         v-if="!isLast"
-        class="w-0.5 h-full bg-gradient-to-b from-primary-200 to-accent-200 mt-4"
+        class="w-0.5 h-full bg-blue-50 mt-4"
       />
     </div>
 

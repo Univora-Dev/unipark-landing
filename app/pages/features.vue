@@ -108,7 +108,7 @@ const timeline = [
 <template>
   <div>
     <!-- Hero Section -->
-    <section class="py-20 px-4 md:px-8 bg-gradient-to-br from-primary-50 to-accent-50">
+    <section class="py-20 px-4 md:px-8 bg-blue-50">
       <div class="container-custom text-center">
         <ScrollReveal>
           <h1 class="text-5xl md:text-6xl font-heading font-bold text-dark-900 mb-6">
@@ -129,6 +129,74 @@ const timeline = [
       subtitle="Всё необходимое для эффективной работы парковки"
       :features="mainFeatures"
     />
+
+    <!-- Product Screenshots -->
+    <section class="py-20 px-4 md:px-8">
+      <div class="container-custom">
+        <div class="text-center mb-16">
+          <ScrollReveal>
+            <h2 class="text-4xl md:text-5xl font-heading font-bold text-dark-900 mb-4">
+              Интерфейс системы
+            </h2>
+          </ScrollReveal>
+          <ScrollReveal :delay="200">
+            <p class="text-xl text-dark-600 max-w-2xl mx-auto">
+              Удобная панель управления с полным контролем над парковкой
+            </p>
+          </ScrollReveal>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <ScrollReveal :delay="0">
+            <div class="relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300">
+              <NuxtImg
+                src="/images/screenshots/1.jpg"
+                alt="Панель управления UniPark"
+                class="w-full h-auto"
+                loading="lazy"
+                format="webp"
+              />
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal :delay="100">
+            <div class="relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300">
+              <NuxtImg
+                src="/images/screenshots/2.jpg"
+                alt="Аналитика и отчеты"
+                class="w-full h-auto"
+                loading="lazy"
+                format="webp"
+              />
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal :delay="200">
+            <div class="relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300">
+              <NuxtImg
+                src="/images/screenshots/3.jpg"
+                alt="Управление тарифами"
+                class="w-full h-auto"
+                loading="lazy"
+                format="webp"
+              />
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal :delay="300">
+            <div class="relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300">
+              <NuxtImg
+                src="/images/screenshots/4.jpg"
+                alt="Мониторинг в реальном времени"
+                class="w-full h-auto"
+                loading="lazy"
+                format="webp"
+              />
+            </div>
+          </ScrollReveal>
+        </div>
+      </div>
+    </section>
 
     <!-- How it works -->
     <section class="py-20 px-4 md:px-8 bg-dark-50">
