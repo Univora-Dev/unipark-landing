@@ -1,2 +1,11 @@
-User-Agent: *
-Disallow:
+# robots.txt для UniPark
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://unipark.uz/sitemap.xml
+
+# Блокируем технические директории
+Disallow: /_nuxt/
+Disallow: /api/
