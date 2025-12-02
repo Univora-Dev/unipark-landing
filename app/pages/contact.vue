@@ -58,20 +58,10 @@ const workingHours = [
 <template>
   <div>
     <!-- Hero Section -->
-    <section class="py-20 px-4 md:px-8 bg-blue-50">
-      <div class="container-custom text-center">
-        <ScrollReveal>
-          <h1 class="text-5xl md:text-6xl font-heading font-bold text-dark-900 mb-6">
-            Свяжитесь с нами
-          </h1>
-        </ScrollReveal>
-        <ScrollReveal :delay="200">
-          <p class="text-xl text-dark-600 max-w-3xl mx-auto">
-            Ответим на все ваши вопросы и поможем подобрать оптимальное решение для вашего бизнеса
-          </p>
-        </ScrollReveal>
-      </div>
-    </section>
+    <PageHero
+      title="Свяжитесь с нами"
+      subtitle="Ответим на все ваши вопросы и поможем подобрать оптимальное решение для вашего бизнеса"
+    />
 
     <!-- Contact Info Cards -->
     <section class="py-20 px-4 md:px-8">

@@ -115,20 +115,10 @@ const testimonials: Testimonial[] = [
 <template>
   <div>
     <!-- Hero Section -->
-    <section class="py-20 px-4 md:px-8 bg-blue-50">
-      <div class="container-custom text-center">
-        <ScrollReveal>
-          <h1 class="text-5xl md:text-6xl font-heading font-bold text-dark-900 mb-6">
-            Истории успеха
-          </h1>
-        </ScrollReveal>
-        <ScrollReveal :delay="200">
-          <p class="text-xl text-dark-600 max-w-3xl mx-auto">
-            Узнайте, как UniPark помогает бизнесу автоматизировать парковки и увеличивать прибыль
-          </p>
-        </ScrollReveal>
-      </div>
-    </section>
+    <PageHero
+      title="Истории успеха"
+      subtitle="Узнайте, как UniPark помогает бизнесу автоматизировать парковки и увеличивать прибыль"
+    />
 
     <!-- Case Studies Grid -->
     <section class="py-20 px-4 md:px-8">
