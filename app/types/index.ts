@@ -22,9 +22,14 @@ export interface PricingPlan {
   name: string
   price: string
   description: string
-  features: PricingFeature[]
+  features: string[]
   popular?: boolean
-  ctaText: string
+  ctaText?: string
+  buttonText?: string
+  period?: string
+  priceDescription?: string
+  capacity?: string
+  yearlyDiscount?: string
 }
 
 // Stats types
