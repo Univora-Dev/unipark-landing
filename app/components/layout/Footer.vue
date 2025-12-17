@@ -30,9 +30,9 @@ const footerLinks = computed(() => ({
 }));
 
 const socialLinks = [
-	{ name: 'Telegram', icon: 'lucide:send', url: '#' },
-	{ name: 'WhatsApp', icon: 'lucide:message-circle', url: '#' },
-	{ name: 'Email', icon: 'lucide:mail', url: 'mailto:support@unipark.io' },
+	{ name: 'Telegram', icon: 'lucide:send', url: 'https://t.me/univorauz' },
+	{ name: 'Instagram', icon: 'lucide:instagram', url: 'https://instagram.com/univorauz' },
+	{ name: 'LinkedIn', icon: 'lucide:linkedin', url: 'https://www.linkedin.com/company/univorauz/' },
 ];
 </script>
 

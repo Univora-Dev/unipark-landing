@@ -23,32 +23,32 @@ const handleSubmit = async (data: ContactFormData) => {
 
 const contactInfo = computed(() => [
   {
-    icon: 'lucide:mail',
-    title: t('contact.info.email.title'),
-    value: 'info@unipark.io',
-    description: t('contact.info.email.description'),
-    link: 'mailto:info@unipark.io'
-  },
-  {
     icon: 'lucide:phone',
     title: t('contact.info.phone.title'),
-    value: '+7 (495) 123-45-67',
+    value: '+998 99 220 84 84',
     description: t('contact.info.phone.description'),
-    link: 'tel:+74951234567'
-  },
-  {
-    icon: 'lucide:message-circle',
-    title: t('contact.info.telegram.title'),
-    value: '@unipark_support',
-    description: t('contact.info.telegram.description'),
-    link: 'https://t.me/unipark_support'
+    link: 'tel:+998992208484'
   },
   {
     icon: 'lucide:map-pin',
     title: t('contact.info.office.title'),
-    value: 'Москва, ул. Примерная, 123',
+    value: t('contact.info.office.address'),
     description: t('contact.info.office.description'),
-    link: '#'
+    link: 'https://yandex.uz/maps/-/CDaZzLqr'
+  },
+  {
+    icon: 'lucide:send',
+    title: t('contact.info.telegram.title'),
+    value: '@univorauz',
+    description: t('contact.info.telegram.description'),
+    link: 'https://t.me/univorauz'
+  },
+  {
+    icon: 'lucide:globe',
+    title: t('contact.info.website.title'),
+    value: 'univora.uz',
+    description: t('contact.info.website.description'),
+    link: 'https://univora.uz'
   }
 ])
 
@@ -195,22 +195,25 @@ const workingHours = computed(() => [
                 </h3>
                 <div class="flex gap-3">
                   <a
-                    href="#"
+                    href="https://t.me/univorauz"
+                    target="_blank"
                     class="w-10 h-10 rounded-full bg-dark-100 hover:bg-primary-600 flex items-center justify-center text-dark-600 hover:text-white transition-all"
                   >
                     <Icon name="lucide:send" class="w-5 h-5" />
                   </a>
                   <a
-                    href="#"
+                    href="https://instagram.com/univorauz"
+                    target="_blank"
                     class="w-10 h-10 rounded-full bg-dark-100 hover:bg-primary-600 flex items-center justify-center text-dark-600 hover:text-white transition-all"
                   >
-                    <Icon name="lucide:message-circle" class="w-5 h-5" />
+                    <Icon name="lucide:instagram" class="w-5 h-5" />
                   </a>
                   <a
-                    href="#"
+                    href="https://www.linkedin.com/company/univorauz/"
+                    target="_blank"
                     class="w-10 h-10 rounded-full bg-dark-100 hover:bg-primary-600 flex items-center justify-center text-dark-600 hover:text-white transition-all"
                   >
-                    <Icon name="lucide:mail" class="w-5 h-5" />
+                    <Icon name="lucide:linkedin" class="w-5 h-5" />
                   </a>
                 </div>
               </Card>

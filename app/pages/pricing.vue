@@ -128,18 +128,38 @@ const installationIncludes = computed(() => [
 	{
 		title: t('pricing.installation.includes.technical.title'),
 		icon: 'lucide:server',
-		items: t('pricing.installation.includes.technical.items'),
+		items: [
+			t('pricing.installation.includes.technical.item1'),
+			t('pricing.installation.includes.technical.item2'),
+			t('pricing.installation.includes.technical.item3'),
+		],
 	},
 	{
 		title: t('pricing.installation.includes.software.title'),
 		icon: 'lucide:settings',
-		items: t('pricing.installation.includes.software.items'),
+		items: [
+			t('pricing.installation.includes.software.item1'),
+			t('pricing.installation.includes.software.item2'),
+			t('pricing.installation.includes.software.item3'),
+		],
 	},
 	{
 		title: t('pricing.installation.includes.training.title'),
 		icon: 'lucide:graduation-cap',
-		items: t('pricing.installation.includes.training.items'),
+		items: [
+			t('pricing.installation.includes.training.item1'),
+			t('pricing.installation.includes.training.item2'),
+			t('pricing.installation.includes.training.item3'),
+		],
 	},
+]);
+
+const enterpriseFeatures = computed(() => [
+	t('pricing.enterprise.feature1'),
+	t('pricing.enterprise.feature2'),
+	t('pricing.enterprise.feature3'),
+	t('pricing.enterprise.feature4'),
+	t('pricing.enterprise.feature5'),
 ]);
 
 const faqItems = computed<FAQItem[]>(() => [
@@ -551,7 +571,7 @@ const faqItems = computed<FAQItem[]>(() => [
 									{{ t('pricing.enterprise.subtitle') }}
 								</p>
 								<ul class="space-y-3 mb-8">
-									<li v-for="feature in t('pricing.enterprise.features')" :key="feature" class="flex items-center gap-3">
+									<li v-for="feature in enterpriseFeatures" :key="feature" class="flex items-center gap-3">
 										<Icon name="lucide:check-circle" class="w-5 h-5 text-accent-400" />
 										<span>{{ feature }}</span>
 									</li>

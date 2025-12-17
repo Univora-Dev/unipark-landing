@@ -312,27 +312,21 @@
       "includes": {
         "technical": {
           "title": "Texnik ishlar",
-          "items": [
-            "Server muhitini tayyorlash (Cloud / On-premise)",
-            "Kamera va shlagbaumlarni ulash",
-            "Lokal tarmoq va internet konfiguratsiyasi"
-          ]
+          "item1": "Server muhitini tayyorlash (Cloud / On-premise)",
+          "item2": "Kamera va shlagbaumlarni ulash",
+          "item3": "Lokal tarmoq va internet konfiguratsiyasi"
         },
         "software": {
           "title": "Dasturiy ishlar",
-          "items": [
-            "Tariflar va hududiy koeffitsiyentlarni sozlash",
-            "Foydalanuvchi rollari va huquqlari",
-            "Hisobotlar va jurnallar"
-          ]
+          "item1": "Tariflar va hududiy koeffitsiyentlarni sozlash",
+          "item2": "Foydalanuvchi rollari va huquqlari",
+          "item3": "Hisobotlar va jurnallar"
         },
         "training": {
           "title": "O'qitish",
-          "items": [
-            "Administratorlar uchun (1 kun)",
-            "Operatorlar uchun (1 kun)",
-            "Qo'llanma va video yo'riqnomalar"
-          ]
+          "item1": "Administratorlar uchun (1 kun)",
+          "item2": "Operatorlar uchun (1 kun)",
+          "item3": "Qo'llanma va video yo'riqnomalar"
         }
       }
     },
@@ -356,13 +350,11 @@
     "enterprise": {
       "title": "Enterprise Custom",
       "subtitle": "Davlat va yirik mijozlar uchun maxsus yechimlar",
-      "features": [
-        "SaaS + On-premise hybrid",
-        "Individual funksional va integratsiyalar",
-        "UZS / USD hisob-kitob",
-        "Davlat axborot tizimlari bilan integratsiya",
-        "Alohida SLA va shartnoma"
-      ],
+      "feature1": "SaaS + On-premise hybrid",
+      "feature2": "Individual funksional va integratsiyalar",
+      "feature3": "UZS / USD hisob-kitob",
+      "feature4": "Davlat axborot tizimlari bilan integratsiya",
+      "feature5": "Alohida SLA va shartnoma",
       "govObjects": "Davlat obyektlari",
       "govDescription": "Tenderlar va davlat xaridlari uchun mos. Barqaror va shaffof narxlar.",
       "dataSecurityGuarantee": "Ma'lumotlar xavfsizligi kafolati"
@@ -447,21 +439,22 @@
       "subtitle": "Barcha savollaringizga javob beramiz va biznesingiz uchun optimal yechimni tanlashga yordam beramiz"
     },
     "info": {
-      "email": {
-        "title": "Email",
-        "description": "1 soat ichida javob beramiz"
-      },
       "phone": {
         "title": "Telefon",
         "description": "Dush-Jum 9:00 dan 18:00 gacha"
+      },
+      "office": {
+        "title": "Ofis",
+        "address": "Toshkent sh., Yunusobod t., Kichik halqa yo'li, 38/1",
+        "description": "Oldindan yozilish orqali"
       },
       "telegram": {
         "title": "Telegram",
         "description": "24/7 tez javoblar"
       },
-      "office": {
-        "title": "Ofis",
-        "description": "Oldindan yozilish orqali"
+      "website": {
+        "title": "Veb-sayt",
+        "description": "Kompaniyaning rasmiy sayti"
       }
     },
     "form": {

@@ -312,27 +312,21 @@
       "includes": {
         "technical": {
           "title": "Technical Work",
-          "items": [
-            "Server environment preparation (Cloud / On-premise)",
-            "Camera and barrier connection",
-            "Local network and internet configuration"
-          ]
+          "item1": "Server environment preparation (Cloud / On-premise)",
+          "item2": "Camera and barrier connection",
+          "item3": "Local network and internet configuration"
         },
         "software": {
           "title": "Software Work",
-          "items": [
-            "Tariff and regional coefficient setup",
-            "User roles and permissions",
-            "Reports and logs"
-          ]
+          "item1": "Tariff and regional coefficient setup",
+          "item2": "User roles and permissions",
+          "item3": "Reports and logs"
         },
         "training": {
           "title": "Training",
-          "items": [
-            "For administrators (1 day)",
-            "For operators (1 day)",
-            "Manual and video tutorials"
-          ]
+          "item1": "For administrators (1 day)",
+          "item2": "For operators (1 day)",
+          "item3": "Manual and video tutorials"
         }
       }
     },
@@ -356,13 +350,11 @@
     "enterprise": {
       "title": "Enterprise Custom",
       "subtitle": "Special solutions for government and large clients",
-      "features": [
-        "SaaS + On-premise hybrid",
-        "Individual functionality and integrations",
-        "UZS / USD settlements",
-        "Integration with government information systems",
-        "Separate SLA and contract"
-      ],
+      "feature1": "SaaS + On-premise hybrid",
+      "feature2": "Individual functionality and integrations",
+      "feature3": "UZS / USD settlements",
+      "feature4": "Integration with government information systems",
+      "feature5": "Separate SLA and contract",
       "govObjects": "Government Facilities",
       "govDescription": "Suitable for tenders and government procurement. Stable and transparent prices.",
       "dataSecurityGuarantee": "Data Security Guarantee"
@@ -447,21 +439,22 @@
       "subtitle": "We'll answer all your questions and help you find the optimal solution for your business"
     },
     "info": {
-      "email": {
-        "title": "Email",
-        "description": "We'll respond within 1 hour"
-      },
       "phone": {
         "title": "Phone",
         "description": "Mon-Fri 9:00 AM to 6:00 PM"
+      },
+      "office": {
+        "title": "Office",
+        "address": "Tashkent, Yunusabad district, Minor Ring Road, 38/1",
+        "description": "By appointment"
       },
       "telegram": {
         "title": "Telegram",
         "description": "Fast replies 24/7"
       },
-      "office": {
-        "title": "Office",
-        "description": "By appointment"
+      "website": {
+        "title": "Website",
+        "description": "Official company website"
       }
     },
     "form": {
