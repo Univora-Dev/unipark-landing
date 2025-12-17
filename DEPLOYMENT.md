@@ -35,7 +35,7 @@ systemctl restart unipark
 The project includes three GitHub Actions workflows:
 
 1. **deploy.yml** - Production deployment on push to main/master
-   - Runs linting and tests
+   - Runs build tests
    - Builds the application
    - Deploys to production server
    - Verifies deployment
@@ -43,7 +43,6 @@ The project includes three GitHub Actions workflows:
 
 2. **test.yml** - Testing for pull requests and feature branches
    - Runs on all PRs and non-main branches
-   - Performs linting checks
    - Validates build process
    - Comments on PRs with results
 
@@ -100,7 +99,7 @@ Watch the deployment progress in the **Actions** tab on GitHub.
 Two deployment workflows are available:
 
 #### Method 1: Git Pull (default - deploy.yml) ✅ Current
-- Runs tests and linting before deployment
+- Runs build tests before deployment
 - Pulls code on the server
 - Builds on the server
 - Verifies deployment health
@@ -119,7 +118,6 @@ Two deployment workflows are available:
 The CI/CD pipeline includes:
 
 ✅ **Automated Testing**
-- ESLint code quality checks
 - Build verification
 - Pre-deployment validation
 
@@ -163,8 +161,7 @@ cat /root/.ssh/id_ed25519.pub >> /root/.ssh/authorized_keys
 
 #### Build fails on GitHub Actions
 
-Check the Actions logs for specific errors. Common issues:
-- Linting errors: Fix locally with `pnpm exec eslint . --fix`
+Check the Actions logs for specific errors. Common issue:
 - Build errors: Test build locally with `pnpm run build`
 
 #### Service restart fails
