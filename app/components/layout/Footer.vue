@@ -48,6 +48,17 @@ const socialLinks = [
 					<p class="text-dark-300 mb-6 max-w-xs">
 						{{ t('footer.description') }}
 					</p>
+					<!-- Contact Info -->
+					<div class="space-y-3 mb-6">
+						<a href="tel:+998992208484" class="flex items-center gap-2 text-dark-300 hover:text-white transition-colors">
+							<Icon name="lucide:phone" class="w-4 h-4" />
+							<span>+998 99 220 84 84</span>
+						</a>
+						<a href="https://t.me/univorauz" target="_blank" class="flex items-center gap-2 text-dark-300 hover:text-white transition-colors">
+							<Icon name="lucide:send" class="w-4 h-4" />
+							<span>@univorauz</span>
+						</a>
+					</div>
 					<div class="flex items-center gap-4">
 						<a
 							v-for="social in socialLinks"
