@@ -30,32 +30,81 @@ systemctl restart unipark
 
 ## CI/CD Setup with GitHub Actions
 
+### Workflow Overview
+
+The project includes three GitHub Actions workflows:
+
+1. **deploy.yml** - Production deployment on push to main/master
+   - Runs linting and tests
+   - Builds the application
+   - Deploys to production server
+   - Verifies deployment
+   - Sends notifications
+
+2. **test.yml** - Testing for pull requests and feature branches
+   - Runs on all PRs and non-main branches
+   - Performs linting checks
+   - Validates build process
+   - Comments on PRs with results
+
+3. **deploy-rsync.yml.example** - Alternative deployment method
+   - Uses rsync instead of git pull
+   - Faster for large builds
+
 ### Required GitHub Secrets
 
 Add the following secrets to your GitHub repository (Settings → Secrets and variables → Actions):
 
-1. **SERVER_HOST**: Your server IP address or hostname
+1. **SERVER_HOST**: Your server IP address or hostname (e.g., `185.123.45.67` or `unipark.uz`)
 2. **SERVER_USER**: SSH username (typically `root`)
 3. **SSH_PRIVATE_KEY**: Private SSH key for authentication
 4. **SERVER_PORT**: SSH port (optional, defaults to 22)
 
-### Getting the SSH Private Key
+### Step-by-Step Secret Setup
 
-The private key is located at `/root/.ssh/id_ed25519`. To get it:
+#### 1. Get the SSH Private Key
+
+On your server, retrieve the private key:
 
 ```bash
 cat /root/.ssh/id_ed25519
 ```
 
-Copy the entire output (including `-----BEGIN OPENSSH PRIVATE KEY-----` and `-----END OPENSSH PRIVATE KEY-----`) and add it as the `SSH_PRIVATE_KEY` secret in GitHub.
+Copy the entire output (including `-----BEGIN OPENSSH PRIVATE KEY-----` and `-----END OPENSSH PRIVATE KEY-----`).
+
+#### 2. Add Secrets to GitHub
+
+1. Go to your repository on GitHub
+2. Navigate to **Settings** → **Secrets and variables** → **Actions**
+3. Click **New repository secret**
+4. Add each secret:
+   - Name: `SERVER_HOST`, Value: your server IP or hostname
+   - Name: `SERVER_USER`, Value: `root`
+   - Name: `SSH_PRIVATE_KEY`, Value: paste the entire private key
+   - Name: `SERVER_PORT`, Value: `22` (or your custom port)
+
+#### 3. Verify Setup
+
+After adding secrets, push a commit to main/master branch to trigger a deployment:
+
+```bash
+git add .
+git commit -m "test: trigger deployment"
+git push
+```
+
+Watch the deployment progress in the **Actions** tab on GitHub.
 
 ### Deployment Methods
 
 Two deployment workflows are available:
 
-#### Method 1: Git Pull (default - deploy.yml)
+#### Method 1: Git Pull (default - deploy.yml) ✅ Current
+- Runs tests and linting before deployment
 - Pulls code on the server
 - Builds on the server
+- Verifies deployment health
+- Sends deployment notifications
 - Best for: Servers with adequate resources
 - Slower but uses less GitHub Actions minutes
 
@@ -64,6 +113,78 @@ Two deployment workflows are available:
 - Syncs only the built files
 - Best for: Faster deployments, resource-constrained servers
 - To use: Rename `deploy-rsync.yml.example` to `deploy-rsync.yml` and delete/disable `deploy.yml`
+
+### Automated Features
+
+The CI/CD pipeline includes:
+
+✅ **Automated Testing**
+- ESLint code quality checks
+- Build verification
+- Pre-deployment validation
+
+✅ **Smart Deployment**
+- Only deploys if all tests pass
+- Automatic service restart
+- Health check verification
+
+✅ **Notifications**
+- Commit comments on success/failure
+- Deployment summary in GitHub Actions
+- PR comments for pull requests
+
+✅ **Manual Trigger**
+- Deploy on-demand via GitHub Actions UI
+- Go to Actions → Deploy to Production → Run workflow
+
+### Workflow Triggers
+
+| Workflow | Trigger | Purpose |
+|----------|---------|---------|
+| deploy.yml | Push to main/master | Production deployment |
+| deploy.yml | Manual dispatch | On-demand deployment |
+| test.yml | Pull requests | Code review validation |
+| test.yml | Push to feature branches | Development testing |
+
+### Troubleshooting CI/CD
+
+#### Deployment fails with SSH error
+
+Check that your secrets are correctly set:
+```bash
+# On server, verify SSH key exists
+ls -la /root/.ssh/id_ed25519
+```
+
+Make sure the public key is in authorized_keys:
+```bash
+cat /root/.ssh/id_ed25519.pub >> /root/.ssh/authorized_keys
+```
+
+#### Build fails on GitHub Actions
+
+Check the Actions logs for specific errors. Common issues:
+- Linting errors: Fix locally with `pnpm exec eslint . --fix`
+- Build errors: Test build locally with `pnpm run build`
+
+#### Service restart fails
+
+Check service status on the server:
+```bash
+systemctl status unipark
+journalctl -u unipark -n 50
+```
+
+#### Manual deployment override
+
+If CI/CD is failing but you need to deploy urgently:
+```bash
+cd /root/projects/unipark-landing
+git pull
+pnpm install --frozen-lockfile
+pnpm run build
+systemctl restart unipark
+```
 
 ## SSL/HTTPS Setup
 

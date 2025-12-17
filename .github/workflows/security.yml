@@ -1,0 +1,122 @@
+name: Security and Dependency Check
+
+on:
+  schedule:
+    # Run weekly on Monday at 9:00 UTC
+    - cron: '0 9 * * 1'
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'package.json'
+      - 'pnpm-lock.yaml'
+
+jobs:
+  security-check:
+    name: Security Audit
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'pnpm'
+
+      - name: Run pnpm audit
+        id: audit
+        run: |
+          pnpm audit --audit-level=moderate || echo "audit_failed=true" >> $GITHUB_OUTPUT
+        continue-on-error: true
+
+      - name: Check for outdated dependencies
+        id: outdated
+        run: |
+          pnpm outdated || echo "outdated_found=true" >> $GITHUB_OUTPUT
+        continue-on-error: true
+
+      - name: Create issue if vulnerabilities found
+        if: steps.audit.outputs.audit_failed == 'true' && github.event_name == 'schedule'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const title = '🔒 Security vulnerabilities detected';
+            const body = `Automated security audit found vulnerabilities in dependencies.
+
+            Please run \`pnpm audit\` locally to see details and update vulnerable packages.
+
+            To fix:
+            \`\`\`bash
+            pnpm audit --fix
+            \`\`\`
+
+            **Triggered by**: Scheduled weekly check
+            **Date**: ${new Date().toISOString()}`;
+
+            // Check if similar issue already exists
+            const issues = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: ['security']
+            });
+
+            const existingIssue = issues.data.find(issue => issue.title === title);
+
+            if (!existingIssue) {
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title: title,
+                body: body,
+                labels: ['security', 'dependencies']
+              });
+            }
+
+      - name: Comment on PR if issues found
+        if: (steps.audit.outputs.audit_failed == 'true' || steps.outdated.outputs.outdated_found == 'true') && github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            let body = '## 🔍 Dependency Check Results\n\n';
+
+            if ('${{ steps.audit.outputs.audit_failed }}' === 'true') {
+              body += '⚠️ **Security vulnerabilities detected**\n';
+              body += 'Run `pnpm audit` locally to see details.\n\n';
+            }
+
+            if ('${{ steps.outdated.outputs.outdated_found }}' === 'true') {
+              body += '📦 **Outdated dependencies found**\n';
+              body += 'Run `pnpm outdated` to see which packages can be updated.\n\n';
+            }
+
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: body
+            });
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "## 🔒 Security Check Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          if [ "${{ steps.audit.outputs.audit_failed }}" == "true" ]; then
+            echo "⚠️ Security vulnerabilities found - review needed" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "✅ No security vulnerabilities detected" >> $GITHUB_STEP_SUMMARY
+          fi
+          echo "" >> $GITHUB_STEP_SUMMARY
+          if [ "${{ steps.outdated.outputs.outdated_found }}" == "true" ]; then
+            echo "📦 Outdated dependencies detected" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "✅ All dependencies are up to date" >> $GITHUB_STEP_SUMMARY
+          fi
