@@ -1,14 +1,20 @@
 <script setup lang="ts">
 import type { CaseStudy, Testimonial } from '~/types'
 
+const { t } = useI18n()
+
 definePageMeta({
   layout: 'default'
 })
 
-useSEO({
-  title: 'Кейсы UniPark - Истории успеха наших клиентов',
-  description: 'Реальные примеры внедрения UniPark. Увеличение выручки, автоматизация процессов и довольные клиенты.',
-  keywords: 'кейсы парковка, примеры внедрения, отзывы клиентов, истории успеха'
+useHead({
+  title: () => t('seo.cases.title'),
+  meta: [
+    { name: 'description', content: () => t('seo.cases.description') },
+    { name: 'keywords', content: () => t('seo.cases.keywords') },
+    { property: 'og:title', content: () => t('seo.cases.title') },
+    { property: 'og:description', content: () => t('seo.cases.description') }
+  ]
 })
 
 const caseStudies: CaseStudy[] = [
@@ -110,14 +116,21 @@ const testimonials: Testimonial[] = [
     rating: 5
   }
 ]
+
+const stats = computed(() => [
+  { value: 150, label: t('cases.stats.happyClients'), suffix: '+' },
+  { value: 50000, label: t('cases.stats.carsPerDay') },
+  { value: 99.5, label: t('cases.stats.recognitionAccuracy'), suffix: '%' },
+  { value: 24, label: t('cases.stats.support'), suffix: '/7' }
+])
 </script>
 
 <template>
   <div>
     <!-- Hero Section -->
     <PageHero
-      title="Истории успеха"
-      subtitle="Узнайте, как UniPark помогает бизнесу автоматизировать парковки и увеличивать прибыль"
+      :title="t('cases.hero.title')"
+      :subtitle="t('cases.hero.subtitle')"
     />
 
     <!-- Case Studies Grid -->
@@ -141,12 +154,12 @@ const testimonials: Testimonial[] = [
         <div class="text-center mb-16">
           <ScrollReveal>
             <h2 class="text-4xl md:text-5xl font-heading font-bold text-dark-900 mb-4">
-              Реальные внедрения
+              {{ t('cases.implementations.title') }}
             </h2>
           </ScrollReveal>
           <ScrollReveal :delay="200">
             <p class="text-xl text-dark-600 max-w-2xl mx-auto">
-              Посмотрите, как UniPark работает у наших клиентов
+              {{ t('cases.implementations.subtitle') }}
             </p>
           </ScrollReveal>
         </div>
@@ -156,7 +169,7 @@ const testimonials: Testimonial[] = [
             <div class="relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
               <NuxtImg
                 src="/images/screenshots/5.jpg"
-                alt="Внедрение в торговом центре"
+                :alt="t('cases.implementations.shoppingCenter')"
                 class="w-full h-auto"
                 loading="lazy"
                 format="webp"
@@ -168,7 +181,7 @@ const testimonials: Testimonial[] = [
             <div class="relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
               <NuxtImg
                 src="/images/screenshots/6.jpg"
-                alt="Система в бизнес-центре"
+                :alt="t('cases.implementations.businessCenter')"
                 class="w-full h-auto"
                 loading="lazy"
                 format="webp"
@@ -180,7 +193,7 @@ const testimonials: Testimonial[] = [
             <div class="relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
               <NuxtImg
                 src="/images/screenshots/1.jpg"
-                alt="Панель аналитики"
+                :alt="t('cases.implementations.analyticsPanel')"
                 class="w-full h-auto"
                 loading="lazy"
                 format="webp"
@@ -193,14 +206,9 @@ const testimonials: Testimonial[] = [
 
     <!-- Stats Section -->
     <StatsCounter
-      title="UniPark в цифрах"
-      subtitle="Результаты работы наших клиентов"
-      :stats="[
-        { value: 150, label: 'Довольных клиентов', suffix: '+' },
-        { value: 50000, label: 'Автомобилей в день' },
-        { value: 99.5, label: 'Точность распознавания', suffix: '%' },
-        { value: 24, label: 'Техподдержка', suffix: '/7' }
-      ]"
+      :title="t('cases.stats.title')"
+      :subtitle="t('cases.stats.subtitle')"
+      :stats="stats"
     />
 
     <!-- Testimonials Section -->
@@ -209,12 +217,12 @@ const testimonials: Testimonial[] = [
         <div class="text-center mb-16">
           <ScrollReveal>
             <h2 class="text-4xl md:text-5xl font-heading font-bold text-dark-900 mb-4">
-              Отзывы клиентов
+              {{ t('cases.testimonials.title') }}
             </h2>
           </ScrollReveal>
           <ScrollReveal :delay="200">
             <p class="text-xl text-dark-600 max-w-2xl mx-auto">
-              Что говорят о нас наши клиенты
+              {{ t('cases.testimonials.subtitle') }}
             </p>
           </ScrollReveal>
         </div>
@@ -233,10 +241,10 @@ const testimonials: Testimonial[] = [
 
     <!-- CTA -->
     <CTASection
-      title="Станьте следующей историей успеха"
-      subtitle="Присоединяйтесь к 150+ компаниям, которые доверяют UniPark"
-      button-text="Начать бесплатный период"
-      secondary-button-text="Заказать консультацию"
+      :title="t('cases.cta.title')"
+      :subtitle="t('cases.cta.subtitle')"
+      :button-text="t('common.startFreeTrial')"
+      :secondary-button-text="t('cases.cta.orderConsultation')"
       secondary-button-icon="lucide:calendar"
     />
   </div>

@@ -1,4 +1,7 @@
 <script setup lang="ts">
+const { t } = useI18n()
+const localePath = useLocalePath()
+
 const isScrolled = ref(false)
 const isMobileMenuOpen = ref(false)
 
@@ -16,42 +19,72 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <header
-    :class="[
-      'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
-      {
-        'bg-white/95 backdrop-blur-sm shadow-md': isScrolled,
-        'bg-transparent': !isScrolled
-      }
-    ]"
-  >
-    <div class="container-custom">
-      <div class="flex items-center justify-between h-20">
-        <!-- Logo -->
-        <NuxtLink
-          to="/"
-          class="flex items-center"
-        >
-          <img src="/logo.svg" alt="UniPark" class="h-8 w-auto" />
-        </NuxtLink>
+  <header class="fixed top-0 left-0 right-0 z-50">
+    <!-- Top Bar -->
+    <div class="bg-dark-50 border-b border-dark-100 hidden md:block">
+      <div class="container-custom">
+        <div class="flex items-center justify-between h-10 text-sm">
+          <!-- Contact Info -->
+          <div class="flex items-center gap-2 text-dark-600">
+            <span>{{ t('header.contactManager') }}:</span>
+            <a href="tel:+998992208484" class="font-semibold text-dark-900 hover:text-primary-600 transition-colors">
+              +998 99 220 84 84
+            </a>
+          </div>
 
-        <!-- Desktop Navigation -->
-        <Navigation class="hidden md:flex" />
-
-        <!-- CTA Button (Desktop) -->
-        <div class="hidden md:block">
-          <Button variant="primary" size="md" icon="lucide:rocket">
-            Попробовать бесплатно
-          </Button>
+          <!-- Right Side: Language & Login -->
+          <div class="flex items-center gap-4">
+            <LanguageSwitcher />
+            <a href="https://app.unipark.uz/" target="_blank" class="flex items-center gap-1 text-dark-600 hover:text-primary-600 transition-colors">
+              {{ t('header.login') }}
+              <Icon name="lucide:arrow-right" class="w-4 h-4" />
+            </a>
+          </div>
         </div>
+      </div>
+    </div>
 
-        <!-- Mobile Menu Button -->
-        <button
-          class="md:hidden p-2 text-dark-600 hover:text-primary-600 transition-colors"
-          @click="isMobileMenuOpen = true"
-        >
-          <Icon name="lucide:menu" class="w-6 h-6" />
-        </button>
+    <!-- Main Header -->
+    <div
+      :class="[
+        'transition-all duration-300',
+        {
+          'bg-white/95 backdrop-blur-sm shadow-md': isScrolled,
+          'bg-white': !isScrolled
+        }
+      ]"
+    >
+      <div class="container-custom">
+        <div class="flex items-center justify-between h-16 md:h-20">
+          <!-- Logo -->
+          <NuxtLink
+            :to="localePath('/')"
+            class="flex items-center"
+          >
+            <img src="/logo.svg" alt="UniPark" class="h-8 w-auto" />
+          </NuxtLink>
+
+          <!-- Desktop Navigation -->
+          <Navigation class="hidden md:flex" />
+
+          <!-- CTA Button (Desktop) -->
+          <div class="hidden md:flex items-center">
+            <Button variant="primary" size="md">
+              {{ t('header.getDemo') }}
+            </Button>
+          </div>
+
+          <!-- Mobile: Language & Menu -->
+          <div class="md:hidden flex items-center gap-2">
+            <LanguageSwitcher />
+            <button
+              class="p-2 text-dark-600 hover:text-primary-600 transition-colors"
+              @click="isMobileMenuOpen = true"
+            >
+              <Icon name="lucide:menu" class="w-6 h-6" />
+            </button>
+          </div>
+        </div>
       </div>
     </div>
 

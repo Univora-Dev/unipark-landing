@@ -1,0 +1,566 @@
+{
+  "nav": {
+    "home": "Home",
+    "features": "Features",
+    "pricing": "Pricing",
+    "cases": "Cases",
+    "contact": "Contact"
+  },
+  "header": {
+    "contactManager": "Contact manager",
+    "login": "Login",
+    "getDemo": "Get Demo"
+  },
+  "common": {
+    "tryFree": "Try for Free",
+    "watchDemo": "Watch Demo",
+    "contactUs": "Contact Us",
+    "startFreeTrial": "Start Free Trial",
+    "learnMore": "Learn More",
+    "select": "Select",
+    "popular": "Popular",
+    "perMonth": "/month",
+    "month": "month",
+    "allRightsReserved": "All rights reserved",
+    "madeWith": "Made with ❤️ for parking automation"
+  },
+  "home": {
+    "hero": {
+      "title": "Parking Automation Made Easy",
+      "subtitle": "Intelligent parking management system with license plate recognition, flexible tariffs and real-time control"
+    },
+    "features": {
+      "title": "System Features",
+      "subtitle": "Everything you need to automate your parking",
+      "automation": {
+        "title": "Automation",
+        "description": "Real-time license plate recognition via cameras"
+      },
+      "flexibleTariffs": {
+        "title": "Flexible Tariffs",
+        "description": "One-time, daily and hourly rates for any business"
+      },
+      "control247": {
+        "title": "24/7 Control",
+        "description": "Real-time parking monitoring and management"
+      },
+      "analytics": {
+        "title": "Analytics",
+        "description": "Detailed reports and statistics on parking occupancy"
+      },
+      "integrations": {
+        "title": "Integrations",
+        "description": "API for integration with your systems"
+      },
+      "security": {
+        "title": "Security",
+        "description": "Data protection and backup"
+      }
+    },
+    "stats": {
+      "title": "UniPark in Numbers",
+      "subtitle": "Our system processes thousands of entries daily",
+      "profitIncrease": "Profit Increase",
+      "recognitionAccuracy": "Recognition Accuracy",
+      "happyClients": "Happy Clients",
+      "lostTransactions": "Lost Transactions"
+    },
+    "benefits": {
+      "title": "Benefits for Your Business",
+      "subtitle": "Increase efficiency and profit with UniPark",
+      "timeSaving": {
+        "title": "Time Saving",
+        "description": "Automatic recognition and processing reduces entry and exit time by 70%",
+        "metric": "70%",
+        "metricLabel": "time saved"
+      },
+      "profitGrowth": {
+        "title": "Profit Growth",
+        "description": "Eliminating human factor and controlling all payments increases revenue",
+        "metric": "+30%",
+        "metricLabel": "profit growth"
+      },
+      "fullAutomation": {
+        "title": "Full Automation",
+        "description": "System works 24/7 without staff, reducing operational costs",
+        "metric": "-50%",
+        "metricLabel": "staff costs"
+      }
+    },
+    "testimonials": {
+      "title": "Customer Reviews",
+      "subtitle": "More than 100 companies already use UniPark"
+    },
+    "pricing": {
+      "title": "Pricing Plans",
+      "subtitle": "Choose the right plan for your business"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "subtitle": "Answers to popular questions about UniPark system",
+      "installTime": {
+        "question": "How quickly can the system be installed?",
+        "answer": "Installation and setup takes 1 to 3 days depending on parking size. We provide full technical support at all stages of implementation."
+      },
+      "accuracy": {
+        "question": "What is the license plate recognition accuracy?",
+        "answer": "Our system provides up to 98% recognition accuracy even in difficult weather conditions. Modern machine learning algorithms are used."
+      },
+      "integration": {
+        "question": "Can it integrate with existing systems?",
+        "answer": "Yes, UniPark provides API for integration with your accounting systems, CRM, 1C and other platforms. Ready integrations with popular services are also available."
+      },
+      "offline": {
+        "question": "What happens when the internet goes down?",
+        "answer": "The system has a local mode and continues to function without internet connection. All data is synchronized after connection is restored."
+      },
+      "support": {
+        "question": "What support is provided?",
+        "answer": "We offer technical support on all plans. Business plan and above includes priority 24/7 support with guaranteed response time."
+      },
+      "freeTrial": {
+        "question": "Can I try the system for free?",
+        "answer": "Yes, we offer a 14-day free trial for Starter and Business plans. No credit card required and no obligations."
+      }
+    },
+    "cta": {
+      "title": "Ready to Start?",
+      "subtitle": "Try UniPark free for 14 days. No credit card required."
+    }
+  },
+  "features": {
+    "hero": {
+      "title": "UniPark Features",
+      "subtitle": "Complete toolkit for automating and managing your parking"
+    },
+    "main": {
+      "title": "Key Features",
+      "subtitle": "Everything needed for efficient parking operation",
+      "recognition": {
+        "title": "License Plate Recognition",
+        "description": "Automatic state license plate recognition via cameras with 99.5% accuracy. Support for all plate types and operation in any weather conditions."
+      },
+      "flexibleTariffs": {
+        "title": "Flexible Tariffs",
+        "description": "Set up any tariff plans: hourly, daily, subscriptions. Different tariffs for different zones and customer types."
+      },
+      "accessControl": {
+        "title": "Access Control",
+        "description": "Automatic barrier opening for registered vehicles. White and black lists. History of all entries and exits."
+      },
+      "analytics": {
+        "title": "Analytics & Reports",
+        "description": "Detailed statistics on parking occupancy, revenue, popular hours. Export reports to Excel and PDF. Occupancy forecasting."
+      },
+      "integrations": {
+        "title": "Integrations",
+        "description": "REST API for integration with your systems. Webhook notifications. Ready integrations with 1C, CRM and payment systems."
+      },
+      "mobileApp": {
+        "title": "Mobile App",
+        "description": "Manage parking from your smartphone. Get event notifications. Check statistics in real time."
+      }
+    },
+    "additional": {
+      "title": "Additional Features",
+      "subtitle": "Even more features for comfortable work",
+      "dataSecurity": {
+        "title": "Data Security",
+        "description": "Encryption of all data. Regular backup. Compliance with data protection requirements."
+      },
+      "support247": {
+        "title": "24/7 Support",
+        "description": "Round-the-clock support by phone and chat. Help with setup and updates."
+      },
+      "scalability": {
+        "title": "Scalability",
+        "description": "From 1 to 1000+ cameras. Support for multiple parkings in one system."
+      },
+      "updates": {
+        "title": "Updates",
+        "description": "Regular updates with new features. Automatic installation without downtime."
+      },
+      "notifications": {
+        "title": "Notifications",
+        "description": "Email and SMS notifications to customers. Push notifications to administrators. Configurable triggers."
+      },
+      "multilingual": {
+        "title": "Multilingual",
+        "description": "Support for Russian, English and other languages. Interface and report localization."
+      }
+    },
+    "interface": {
+      "title": "System Interface",
+      "subtitle": "Convenient control panel with full parking control",
+      "dashboard": "UniPark Dashboard",
+      "analytics": "Analytics and Reports",
+      "tariffs": "Tariff Management",
+      "monitoring": "Real-time Monitoring"
+    },
+    "howItWorks": {
+      "title": "How It Works",
+      "subtitle": "From installation to full operation in 4 simple steps",
+      "step1": {
+        "title": "Camera Installation",
+        "description": "We install cameras at parking entry and exit. We set up the optimal viewing angle for license plate recognition."
+      },
+      "step2": {
+        "title": "Tariff Setup",
+        "description": "We create tariff plans for your business. We set up parking zones, subscriptions and special offers."
+      },
+      "step3": {
+        "title": "System Launch",
+        "description": "We test the system and launch it. We train your staff to work with the control panel."
+      },
+      "step4": {
+        "title": "Monitoring",
+        "description": "We monitor system operation 24/7. We analyze data and optimize settings for maximum efficiency."
+      }
+    },
+    "cta": {
+      "title": "Ready to Try UniPark?",
+      "subtitle": "Get free access for 14 days and evaluate all system features",
+      "contactExpert": "Contact an Expert"
+    }
+  },
+  "pricing": {
+    "hero": {
+      "title": "Transparent Pricing",
+      "subtitle": "Flexible SaaS plans based on parking capacity"
+    },
+    "plans": {
+      "small": {
+        "name": "Small Park",
+        "description": "Small cities, district centers, private parkings",
+        "capacity": "20 — 100 cars"
+      },
+      "medium": {
+        "name": "Medium Park",
+        "description": "Urban, near shopping centers",
+        "capacity": "101 — 200 cars"
+      },
+      "large": {
+        "name": "Large Park",
+        "description": "Large cities, markets, stations",
+        "capacity": "201 — 500 cars"
+      },
+      "mega": {
+        "name": "Mega Park",
+        "description": "Megapolis, airport, stadium, government facilities",
+        "capacity": "501 — 1000 cars"
+      }
+    },
+    "features": {
+      "cameras": "cameras",
+      "barriers": "barrier",
+      "users": "users",
+      "basicReports": "Basic Reports",
+      "advancedReports": "Advanced Reports",
+      "customReports": "Custom Reports",
+      "emailSupport": "Email Support",
+      "emailChatSupport": "Email + Chat Support",
+      "support247": "24×7 Support",
+      "personalManager": "Personal Manager",
+      "backup7": "7-day backup",
+      "backup14": "14-day backup",
+      "backup30": "30-day backup",
+      "backup90": "90-day backup",
+      "limitedIntegration": "Limited Integration",
+      "fullIntegration": "API and Full Integration"
+    },
+    "additionalGate": "Additional gate",
+    "perMonthPrice": "UZS / month",
+    "yearlyDiscount": "−10% (12 mo), −20% (24 mo)",
+    "individualTerms": "Individual terms",
+    "coefficients": {
+      "title": "Regional Coefficients",
+      "subtitle": "Tariffs are calculated based on customer location and traffic flow coefficients",
+      "region": {
+        "title": "Region Categories",
+        "category": "Category",
+        "regionName": "Region",
+        "coefficient": "Coef.",
+        "a": "Tashkent, central districts",
+        "b": "Regional centers",
+        "c": "District centers",
+        "d": "Villages, small settlements"
+      },
+      "flow": {
+        "title": "Traffic Flow Coefficient",
+        "level": "Level",
+        "description": "Description",
+        "low": "Low",
+        "lowDesc": "Few entries/exits",
+        "medium": "Medium",
+        "mediumDesc": "Stable throughout the day",
+        "high": "High",
+        "highDesc": "Large queues, high revenue"
+      },
+      "formula": {
+        "title": "Final price formula:",
+        "text": "Final Price = Base Tariff × Region Coef. × Flow Coef.",
+        "example": "Example: Medium Park in central Tashkent with high flow = 800,000 × 1.0 × 1.15 ="
+      }
+    },
+    "installation": {
+      "title": "One-time Services",
+      "subtitle": "Installation, setup and training services are paid once based on parking size",
+      "baseConfig": "Basic configuration",
+      "advancedSetup": "Advanced setup",
+      "complexIntegration": "Complex integration",
+      "enterpriseLevel": "Enterprise level",
+      "includes": {
+        "technical": {
+          "title": "Technical Work",
+          "items": [
+            "Server environment preparation (Cloud / On-premise)",
+            "Camera and barrier connection",
+            "Local network and internet configuration"
+          ]
+        },
+        "software": {
+          "title": "Software Work",
+          "items": [
+            "Tariff and regional coefficient setup",
+            "User roles and permissions",
+            "Reports and logs"
+          ]
+        },
+        "training": {
+          "title": "Training",
+          "items": [
+            "For administrators (1 day)",
+            "For operators (1 day)",
+            "Manual and video tutorials"
+          ]
+        }
+      }
+    },
+    "comparison": {
+      "title": "Plan Comparison",
+      "subtitle": "Choose the right plan for your parking",
+      "function": "Function",
+      "cameras": "Number of Cameras",
+      "barriers": "Barriers",
+      "users": "Users",
+      "reports": "Reports",
+      "api": "API",
+      "integration": "Integration",
+      "sla": "SLA",
+      "support": "Support",
+      "backup": "Backup",
+      "limited": "Limited",
+      "full": "Full",
+      "days": "days"
+    },
+    "enterprise": {
+      "title": "Enterprise Custom",
+      "subtitle": "Special solutions for government and large clients",
+      "features": [
+        "SaaS + On-premise hybrid",
+        "Individual functionality and integrations",
+        "UZS / USD settlements",
+        "Integration with government information systems",
+        "Separate SLA and contract"
+      ],
+      "govObjects": "Government Facilities",
+      "govDescription": "Suitable for tenders and government procurement. Stable and transparent prices.",
+      "dataSecurityGuarantee": "Data Security Guarantee"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "subtitle": "Answers to questions about pricing and payment",
+      "items": {
+        "coefficient": {
+          "question": "How is the regional coefficient calculated?",
+          "answer": "Final price = base tariff × region coefficient × flow coefficient. For example, for a parking lot in central Tashkent with high traffic: base price × 1.0 × 1.15."
+        },
+        "additionalGate": {
+          "question": "How much does an additional gate cost?",
+          "answer": "Each additional gate costs +300,000 UZS/month. Additional parking facilities are billed separately."
+        },
+        "yearlyDiscount": {
+          "question": "What discounts are available for annual payment?",
+          "answer": "12-month payment gets −10% discount, 24-month payment gets −20% discount. Individual terms are negotiated for Mega Park."
+        },
+        "government": {
+          "question": "Are there special terms for government organizations?",
+          "answer": "Yes, Enterprise Custom plan is available for government and large clients: SaaS + On-premise hybrid, individual functionality, UZS/USD settlements, integration with government information systems, separate SLA and contract."
+        },
+        "installation": {
+          "question": "What does the installation service include?",
+          "answer": "One-time installation service: server and network setup, camera and barrier connection, tariff and role configuration, administrator and operator training, manual and video tutorials."
+        },
+        "roi": {
+          "question": "How long does it take for the system to pay for itself?",
+          "answer": "Example: Large Park — one-time 8,000,000 UZS + 12-month SaaS ≈ 19,200,000 UZS. Total 1-year cost ≈ 27.2M UZS. In practice, with payment discipline and transparent control, it pays for itself in 6-9 months."
+        }
+      }
+    },
+    "cta": {
+      "title": "Get Free Consultation",
+      "subtitle": "We'll help you choose the right plan for your parking",
+      "askQuestion": "Ask a Question"
+    }
+  },
+  "cases": {
+    "hero": {
+      "title": "Success Stories",
+      "subtitle": "Learn how UniPark helps businesses automate parking and increase profits"
+    },
+    "implementations": {
+      "title": "Real Implementations",
+      "subtitle": "See how UniPark works for our clients",
+      "shoppingCenter": "Shopping center implementation",
+      "businessCenter": "Business center system",
+      "analyticsPanel": "Analytics panel"
+    },
+    "stats": {
+      "title": "UniPark in Numbers",
+      "subtitle": "Results of our clients' work",
+      "happyClients": "Happy Clients",
+      "carsPerDay": "Cars per Day",
+      "recognitionAccuracy": "Recognition Accuracy",
+      "support": "Technical Support"
+    },
+    "testimonials": {
+      "title": "Customer Reviews",
+      "subtitle": "What our customers say about us"
+    },
+    "industries": {
+      "shoppingCenter": "Shopping Center",
+      "businessCenter": "Business Center",
+      "airport": "Airport",
+      "residential": "Residential Complex",
+      "hotel": "Hospitality",
+      "medical": "Healthcare"
+    },
+    "cta": {
+      "title": "Become the Next Success Story",
+      "subtitle": "Join 150+ companies that trust UniPark",
+      "orderConsultation": "Order Consultation"
+    }
+  },
+  "contact": {
+    "hero": {
+      "title": "Contact Us",
+      "subtitle": "We'll answer all your questions and help you find the optimal solution for your business"
+    },
+    "info": {
+      "email": {
+        "title": "Email",
+        "description": "We'll respond within 1 hour"
+      },
+      "phone": {
+        "title": "Phone",
+        "description": "Mon-Fri 9:00 AM to 6:00 PM"
+      },
+      "telegram": {
+        "title": "Telegram",
+        "description": "Fast replies 24/7"
+      },
+      "office": {
+        "title": "Office",
+        "description": "By appointment"
+      }
+    },
+    "form": {
+      "title": "Send Us a Message",
+      "subtitle": "Fill out the form below and we'll contact you soon",
+      "name": "Name",
+      "namePlaceholder": "Your name",
+      "email": "Email",
+      "phone": "Phone",
+      "company": "Company",
+      "companyPlaceholder": "Company name",
+      "message": "Message",
+      "messagePlaceholder": "Tell us about your project...",
+      "agree": "I agree to the",
+      "privacyPolicy": "privacy policy",
+      "and": "and",
+      "termsOfUse": "terms of use",
+      "submit": "Send Message",
+      "submitting": "Sending..."
+    },
+    "workingHours": {
+      "title": "Working Hours",
+      "mondayFriday": "Monday - Friday",
+      "saturday": "Saturday",
+      "sunday": "Sunday",
+      "closed": "Closed"
+    },
+    "quickLinks": {
+      "title": "Quick Links",
+      "knowledgeBase": "Knowledge Base",
+      "apiDocs": "API Documentation",
+      "videoTutorials": "Video Tutorials",
+      "supportForum": "Support Forum"
+    },
+    "social": {
+      "title": "Follow Us"
+    },
+    "map": {
+      "title": "Our Office on Map",
+      "placeholder": "Office location map will be here"
+    },
+    "cta": {
+      "title": "Prefer Live Communication?",
+      "subtitle": "Schedule an online demo with our expert",
+      "bookDemo": "Book a Demo",
+      "askQuestion": "Ask a Question"
+    }
+  },
+  "footer": {
+    "description": "Intelligent parking management system with license plate recognition and process automation.",
+    "sections": {
+      "product": "Product",
+      "company": "Company",
+      "support": "Support",
+      "legal": "Legal"
+    },
+    "links": {
+      "features": "Features",
+      "pricing": "Pricing",
+      "cases": "Cases",
+      "documentation": "Documentation",
+      "aboutUs": "About Us",
+      "blog": "Blog",
+      "careers": "Careers",
+      "contacts": "Contacts",
+      "help": "Help",
+      "faq": "FAQ",
+      "techSupport": "Tech Support",
+      "api": "API",
+      "privacyPolicy": "Privacy Policy",
+      "termsOfUse": "Terms of Use",
+      "publicOffer": "Public Offer"
+    }
+  },
+  "seo": {
+    "home": {
+      "title": "UniPark - Parking Automation Made Easy",
+      "description": "Intelligent parking management system with license plate recognition, flexible tariffs and real-time control",
+      "keywords": "parking management system, parking automation, license plate recognition"
+    },
+    "features": {
+      "title": "UniPark Features - Intelligent Parking Management System",
+      "description": "Automatic license plate recognition, flexible tariffs, analytics and integrations - everything for efficient parking management",
+      "keywords": "parking system features, license plate recognition, parking management, automation"
+    },
+    "pricing": {
+      "title": "Pricing - UniPark Parking Management System",
+      "description": "UniPark SaaS plans. Transparent pricing based on parking capacity. From Small Park to Mega Park.",
+      "keywords": "unipark pricing, parking system prices, parking system pricing"
+    },
+    "cases": {
+      "title": "Case Studies - UniPark Customer Success Stories",
+      "description": "Real examples of UniPark implementation. Revenue increase, process automation and satisfied customers.",
+      "keywords": "parking case studies, implementation examples, customer reviews, success stories"
+    },
+    "contact": {
+      "title": "Contact UniPark - Get in Touch",
+      "description": "Have questions? Contact us in any convenient way. We'll respond within 15 minutes.",
+      "keywords": "contact unipark, get in touch, technical support, consultation"
+    }
+  }
+}

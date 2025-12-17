@@ -9,8 +9,54 @@ export default defineNuxtConfig({
     '@nuxt/hints',
     '@nuxt/icon',
     '@nuxt/image',
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss',
+    '@nuxtjs/i18n'
   ],
+
+  // i18n configuration
+  i18n: {
+    locales: [
+      {
+        code: 'ru',
+        language: 'ru-RU',
+        name: 'Русский',
+        file: 'ru.json'
+      },
+      {
+        code: 'uz',
+        language: 'uz-UZ',
+        name: 'O\'zbekcha',
+        file: 'uz.json'
+      },
+      {
+        code: 'en',
+        language: 'en-US',
+        name: 'English',
+        file: 'en.json'
+      }
+    ],
+    defaultLocale: 'ru',
+    strategy: 'prefix_except_default',
+    langDir: 'locales',
+    lazy: true,
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      redirectOn: 'root',
+      alwaysRedirect: false
+    },
+    baseUrl: 'https://unipark.io',
+    // SEO configuration
+    seo: true,
+    // Meta configuration for SEO
+    meta: {
+      name: 'UniPark',
+      description: 'Intelligent parking management system',
+      ogType: 'website',
+      ogImage: '/og-image.jpg',
+      twitterCard: 'summary_large_image'
+    }
+  },
 
   // Global CSS
   css: ['~/assets/css/app.css'],
@@ -58,17 +104,11 @@ export default defineNuxtConfig({
   // SEO & Meta defaults
   app: {
     head: {
-      htmlAttrs: { lang: 'ru' },
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
-      title: 'UniPark - Автоматизация парковки без лишних усилий',
       meta: [
-        { name: 'description', content: 'Интеллектуальная система управления парковкой с распознаванием номеров, гибкими тарифами и контролем в реальном времени' },
-        { name: 'keywords', content: 'система управления парковкой, автоматизация парковки, распознавание номеров, парковочное ПО' },
         // Open Graph
         { property: 'og:type', content: 'website' },
-        { property: 'og:title', content: 'UniPark - Автоматизация парковки' },
-        { property: 'og:description', content: 'Интеллектуальная система управления парковкой' },
         { property: 'og:image', content: '/og-image.jpg' },
         // Twitter Card
         { name: 'twitter:card', content: 'summary_large_image' }
@@ -84,7 +124,20 @@ export default defineNuxtConfig({
   // Nitro config for sitemap & robots
   nitro: {
     prerender: {
-      routes: ['/', '/features', '/pricing', '/cases', '/contact'],
+      routes: [
+        '/',
+        '/features',
+        '/pricing',
+        '/contact',
+        '/uz',
+        '/uz/features',
+        '/uz/pricing',
+        '/uz/contact',
+        '/en',
+        '/en/features',
+        '/en/pricing',
+        '/en/contact'
+      ],
       crawlLinks: true
     }
   },

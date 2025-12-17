@@ -5,79 +5,85 @@ import type { Testimonial } from '~/components/sections/TestimonialsSection.vue'
 import type { PricingPlan } from '~/components/sections/PricingSection.vue'
 import type { FAQItem } from '~/components/sections/FAQSection.vue'
 
+const { t } = useI18n()
+
 definePageMeta({
   layout: 'default'
 })
 
-useSEO({
-  title: 'UniPark - Автоматизация парковки без лишних усилий',
-  description: 'Интеллектуальная система управления парковкой с распознаванием номеров, гибкими тарифами и контролем в реальном времени',
-  keywords: 'система управления парковкой, автоматизация парковки, распознавание номеров'
+useHead({
+  title: () => t('seo.home.title'),
+  meta: [
+    { name: 'description', content: () => t('seo.home.description') },
+    { name: 'keywords', content: () => t('seo.home.keywords') },
+    { property: 'og:title', content: () => t('seo.home.title') },
+    { property: 'og:description', content: () => t('seo.home.description') }
+  ]
 })
 
-const features: Feature[] = [
+const features = computed<Feature[]>(() => [
   {
-    title: 'Автоматизация',
-    description: 'Распознавание номеров через камеры в режиме реального времени',
+    title: t('home.features.automation.title'),
+    description: t('home.features.automation.description'),
     icon: 'lucide:camera'
   },
   {
-    title: 'Гибкие тарифы',
-    description: 'Разовые, посуточные и почасовые тарифы для любого бизнеса',
+    title: t('home.features.flexibleTariffs.title'),
+    description: t('home.features.flexibleTariffs.description'),
     icon: 'lucide:calculator'
   },
   {
-    title: 'Контроль 24/7',
-    description: 'Мониторинг и управление парковкой в реальном времени',
+    title: t('home.features.control247.title'),
+    description: t('home.features.control247.description'),
     icon: 'lucide:bar-chart-3'
   },
   {
-    title: 'Аналитика',
-    description: 'Детальные отчеты и статистика по загрузке парковки',
+    title: t('home.features.analytics.title'),
+    description: t('home.features.analytics.description'),
     icon: 'lucide:line-chart'
   },
   {
-    title: 'Интеграции',
-    description: 'API для интеграции с вашими системами',
+    title: t('home.features.integrations.title'),
+    description: t('home.features.integrations.description'),
     icon: 'lucide:plug'
   },
   {
-    title: 'Безопасность',
-    description: 'Защита данных и резервное копирование',
+    title: t('home.features.security.title'),
+    description: t('home.features.security.description'),
     icon: 'lucide:shield-check'
   }
-]
+])
 
-const stats: Stat[] = [
-  { value: 30, label: 'Увеличение прибыли', suffix: '%' },
-  { value: 98, label: 'Точность распознавания', suffix: '%' },
-  { value: 100, label: 'Довольных клиентов', suffix: '+' },
-  { value: 0, label: 'Потерянных транзакций', suffix: '' }
-]
+const stats = computed<Stat[]>(() => [
+  { value: 30, label: t('home.stats.profitIncrease'), suffix: '%' },
+  { value: 98, label: t('home.stats.recognitionAccuracy'), suffix: '%' },
+  { value: 100, label: t('home.stats.happyClients'), suffix: '+' },
+  { value: 0, label: t('home.stats.lostTransactions'), suffix: '' }
+])
 
-const benefits: Benefit[] = [
+const benefits = computed<Benefit[]>(() => [
   {
-    title: 'Экономия времени',
-    description: 'Автоматическое распознавание и обработка номеров сокращает время въезда и выезда на 70%',
+    title: t('home.benefits.timeSaving.title'),
+    description: t('home.benefits.timeSaving.description'),
     icon: 'lucide:clock',
-    metric: '70%',
-    metricLabel: 'экономия времени'
+    metric: t('home.benefits.timeSaving.metric'),
+    metricLabel: t('home.benefits.timeSaving.metricLabel')
   },
   {
-    title: 'Увеличение прибыли',
-    description: 'Исключение человеческого фактора и контроль всех платежей увеличивает выручку',
+    title: t('home.benefits.profitGrowth.title'),
+    description: t('home.benefits.profitGrowth.description'),
     icon: 'lucide:trending-up',
-    metric: '+30%',
-    metricLabel: 'рост прибыли'
+    metric: t('home.benefits.profitGrowth.metric'),
+    metricLabel: t('home.benefits.profitGrowth.metricLabel')
   },
   {
-    title: 'Полная автоматизация',
-    description: 'Система работает 24/7 без участия персонала, сокращая операционные расходы',
+    title: t('home.benefits.fullAutomation.title'),
+    description: t('home.benefits.fullAutomation.description'),
     icon: 'lucide:zap',
-    metric: '-50%',
-    metricLabel: 'расходы на персонал'
+    metric: t('home.benefits.fullAutomation.metric'),
+    metricLabel: t('home.benefits.fullAutomation.metricLabel')
   }
-]
+])
 
 const testimonials: Testimonial[] = [
   {
@@ -103,92 +109,90 @@ const testimonials: Testimonial[] = [
   }
 ]
 
-const pricingPlans: PricingPlan[] = [
+const pricingPlans = computed<PricingPlan[]>(() => [
   {
-    name: 'Стартовый',
-    description: 'Для небольших парковок до 50 мест',
-    price: '₸150,000',
-    period: '/месяц',
-    buttonText: 'Попробовать бесплатно',
+    name: t('pricing.plans.small.name'),
+    description: t('pricing.plans.small.capacity'),
+    price: '400 000',
+    period: t('common.perMonth'),
+    buttonText: t('common.select'),
     features: [
-      'До 2 камер распознавания',
-      'Базовая аналитика',
-      'Почасовые тарифы',
-      'Техподдержка в рабочее время',
-      'Мобильное приложение'
+      `2 ${t('pricing.features.cameras')}`,
+      `1 ${t('pricing.features.barriers')}`,
+      t('pricing.features.basicReports'),
+      t('pricing.features.emailSupport'),
+      t('pricing.features.backup7')
     ]
   },
   {
-    name: 'Бизнес',
-    description: 'Для средних и крупных парковок',
-    price: '₸350,000',
-    period: '/месяц',
-    buttonText: 'Начать использовать',
+    name: t('pricing.plans.medium.name'),
+    description: t('pricing.plans.medium.capacity'),
+    price: '800 000',
+    period: t('common.perMonth'),
+    buttonText: t('common.select'),
     highlighted: true,
-    badge: 'Популярный',
+    badge: t('common.popular'),
     features: [
-      'До 10 камер распознавания',
-      'Расширенная аналитика и отчеты',
-      'Все типы тарификации',
-      'Приоритетная поддержка 24/7',
-      'API для интеграций',
-      'Управление абонементами',
-      'Белые/черные списки'
+      `4 ${t('pricing.features.cameras')}`,
+      `2 ${t('pricing.features.barriers')}`,
+      t('pricing.features.advancedReports'),
+      t('pricing.features.emailChatSupport'),
+      t('pricing.features.backup14'),
+      t('pricing.features.limitedIntegration')
     ]
   },
   {
-    name: 'Корпоративный',
-    description: 'Для сетей парковок и крупного бизнеса',
-    price: 'По запросу',
-    period: '',
-    buttonText: 'Связаться с нами',
+    name: t('pricing.plans.large.name'),
+    description: t('pricing.plans.large.capacity'),
+    price: '1 600 000',
+    period: t('common.perMonth'),
+    buttonText: t('common.select'),
     features: [
-      'Неограниченное количество камер',
-      'Индивидуальная настройка',
-      'Выделенный сервер',
-      'Персональный менеджер',
-      'Обучение персонала',
-      'Кастомные интеграции',
-      'SLA 99.9%'
+      `8 ${t('pricing.features.cameras')}`,
+      `4 ${t('pricing.features.barriers')}`,
+      t('pricing.features.advancedReports'),
+      t('pricing.features.support247'),
+      t('pricing.features.backup30'),
+      t('pricing.features.fullIntegration')
     ]
   }
-]
+])
 
-const faqItems: FAQItem[] = [
+const faqItems = computed<FAQItem[]>(() => [
   {
-    question: 'Как быстро можно установить систему?',
-    answer: 'Установка и настройка занимает от 1 до 3 дней в зависимости от размера парковки. Мы предоставляем полную техническую поддержку на всех этапах внедрения.'
+    question: t('home.faq.installTime.question'),
+    answer: t('home.faq.installTime.answer')
   },
   {
-    question: 'Какая точность распознавания номеров?',
-    answer: 'Наша система обеспечивает точность распознавания до 98% даже в сложных погодных условиях. Используются современные алгоритмы машинного обучения.'
+    question: t('home.faq.accuracy.question'),
+    answer: t('home.faq.accuracy.answer')
   },
   {
-    question: 'Можно ли интегрировать с существующими системами?',
-    answer: 'Да, UniPark предоставляет API для интеграции с вашими системами учета, CRM, 1С и другими платформами. Также доступны готовые интеграции с популярными сервисами.'
+    question: t('home.faq.integration.question'),
+    answer: t('home.faq.integration.answer')
   },
   {
-    question: 'Что происходит при отключении интернета?',
-    answer: 'Система имеет локальный режим работы и продолжает функционировать без подключения к интернету. Все данные синхронизируются после восстановления связи.'
+    question: t('home.faq.offline.question'),
+    answer: t('home.faq.offline.answer')
   },
   {
-    question: 'Какая поддержка предоставляется?',
-    answer: 'Мы предлагаем техническую поддержку по всем тарифам. План "Бизнес" и выше включает приоритетную поддержку 24/7 с гарантированным временем ответа.'
+    question: t('home.faq.support.question'),
+    answer: t('home.faq.support.answer')
   },
   {
-    question: 'Можно ли попробовать систему бесплатно?',
-    answer: 'Да, мы предлагаем 14-дневный бесплатный пробный период для тарифа "Стартовый" и "Бизнес". Без привязки карты и обязательств.'
+    question: t('home.faq.freeTrial.question'),
+    answer: t('home.faq.freeTrial.answer')
   }
-]
+])
 </script>
 
 <template>
   <div>
     <!-- Hero Section -->
     <HeroSection
-      title="Автоматизация парковки без лишних усилий"
-      subtitle="Интеллектуальная система управления парковкой с распознаванием номеров, гибкими тарифами и контролем в реальном времени"
-      primary-button-text="Смотреть демо"
+      :title="t('home.hero.title')"
+      :subtitle="t('home.hero.subtitle')"
+      :primary-button-text="t('common.watchDemo')"
       primary-button-icon="lucide:play-circle"
       :images="[
         '/images/screenshots/1.jpg',
@@ -200,52 +204,52 @@ const faqItems: FAQItem[] = [
 
     <!-- Features Section -->
     <FeaturesGrid
-      title="Возможности системы"
-      subtitle="Всё необходимое для автоматизации вашей парковки"
+      :title="t('home.features.title')"
+      :subtitle="t('home.features.subtitle')"
       :features="features"
     />
 
     <!-- Benefits Section -->
     <BenefitsSection
-      title="Преимущества для вашего бизнеса"
-      subtitle="Увеличьте эффективность и прибыль с UniPark"
+      :title="t('home.benefits.title')"
+      :subtitle="t('home.benefits.subtitle')"
       :benefits="benefits"
     />
 
     <!-- Stats Section -->
     <StatsCounter
-      title="UniPark в цифрах"
-      subtitle="Наша система обрабатывает тысячи въездов ежедневно"
+      :title="t('home.stats.title')"
+      :subtitle="t('home.stats.subtitle')"
       :stats="stats"
     />
 
     <!-- Testimonials Section -->
     <TestimonialsSection
-      title="Отзывы наших клиентов"
-      subtitle="Более 100 компаний уже используют UniPark"
+      :title="t('home.testimonials.title')"
+      :subtitle="t('home.testimonials.subtitle')"
       :testimonials="testimonials"
     />
 
     <!-- Pricing Section -->
     <PricingSection
-      title="Тарифные планы"
-      subtitle="Выберите подходящий тариф для вашего бизнеса"
+      :title="t('home.pricing.title')"
+      :subtitle="t('home.pricing.subtitle')"
       :plans="pricingPlans"
     />
 
     <!-- FAQ Section -->
     <FAQSection
-      title="Часто задаваемые вопросы"
-      subtitle="Ответы на популярные вопросы о системе UniPark"
+      :title="t('home.faq.title')"
+      :subtitle="t('home.faq.subtitle')"
       :items="faqItems"
     />
 
     <!-- CTA Section -->
     <CTASection
-      title="Готовы начать?"
-      subtitle="Попробуйте UniPark бесплатно в течение 14 дней. Без привязки карты."
-      button-text="Начать бесплатный период"
-      secondary-button-text="Связаться с нами"
+      :title="t('home.cta.title')"
+      :subtitle="t('home.cta.subtitle')"
+      :button-text="t('common.startFreeTrial')"
+      :secondary-button-text="t('common.contactUs')"
       secondary-button-icon="lucide:mail"
     />
   </div>

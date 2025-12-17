@@ -1,31 +1,33 @@
 <script setup lang="ts">
+const { t } = useI18n()
+const localePath = useLocalePath()
+
 const currentYear = new Date().getFullYear();
 
-const footerLinks = {
+const footerLinks = computed(() => ({
 	product: [
-		{ name: 'Возможности', path: '/features' },
-		{ name: 'Тарифы', path: '/pricing' },
-		{ name: 'Кейсы', path: '/cases' },
-		{ name: 'Документация', path: '#' },
+		{ name: t('footer.links.features'), path: '/features' },
+		{ name: t('footer.links.pricing'), path: '/pricing' },
+		{ name: t('footer.links.documentation'), path: '#' },
 	],
 	company: [
-		{ name: 'О нас', path: '#' },
-		{ name: 'Блог', path: '#' },
-		{ name: 'Карьера', path: '#' },
-		{ name: 'Контакты', path: '/contact' },
+		{ name: t('footer.links.aboutUs'), path: '#' },
+		{ name: t('footer.links.blog'), path: '#' },
+		{ name: t('footer.links.careers'), path: '#' },
+		{ name: t('footer.links.contacts'), path: '/contact' },
 	],
 	support: [
-		{ name: 'Помощь', path: '#' },
-		{ name: 'FAQ', path: '#' },
-		{ name: 'Техподдержка', path: '#' },
-		{ name: 'API', path: '#' },
+		{ name: t('footer.links.help'), path: '#' },
+		{ name: t('footer.links.faq'), path: '#' },
+		{ name: t('footer.links.techSupport'), path: '#' },
+		{ name: t('footer.links.api'), path: '#' },
 	],
 	legal: [
-		{ name: 'Политика конфиденциальности', path: '#' },
-		{ name: 'Условия использования', path: '#' },
-		{ name: 'Публичная оферта', path: '#' },
+		{ name: t('footer.links.privacyPolicy'), path: '#' },
+		{ name: t('footer.links.termsOfUse'), path: '#' },
+		{ name: t('footer.links.publicOffer'), path: '#' },
 	],
-};
+}));
 
 const socialLinks = [
 	{ name: 'Telegram', icon: 'lucide:send', url: '#' },
@@ -44,8 +46,7 @@ const socialLinks = [
 						<img src="/unipark-dark.svg" alt="UniPark" class="h-8 w-auto" />
 					</div>
 					<p class="text-dark-300 mb-6 max-w-xs">
-						Интеллектуальная система управления парковкой с распознаванием
-						номеров и автоматизацией процессов.
+						{{ t('footer.description') }}
 					</p>
 					<div class="flex items-center gap-4">
 						<a
@@ -62,11 +63,11 @@ const socialLinks = [
 
 				<!-- Product Links -->
 				<div>
-					<h3 class="font-heading font-bold text-lg mb-4">Продукт</h3>
+					<h3 class="font-heading font-bold text-lg mb-4">{{ t('footer.sections.product') }}</h3>
 					<ul class="space-y-3">
 						<li v-for="link in footerLinks.product" :key="link.name">
 							<NuxtLink
-								:to="link.path"
+								:to="link.path.startsWith('#') ? link.path : localePath(link.path)"
 								class="text-dark-300 hover:text-white transition-colors"
 							>
 								{{ link.name }}
@@ -77,11 +78,11 @@ const socialLinks = [
 
 				<!-- Company Links -->
 				<div>
-					<h3 class="font-heading font-bold text-lg mb-4">Компания</h3>
+					<h3 class="font-heading font-bold text-lg mb-4">{{ t('footer.sections.company') }}</h3>
 					<ul class="space-y-3">
 						<li v-for="link in footerLinks.company" :key="link.name">
 							<NuxtLink
-								:to="link.path"
+								:to="link.path.startsWith('#') ? link.path : localePath(link.path)"
 								class="text-dark-300 hover:text-white transition-colors"
 							>
 								{{ link.name }}
@@ -92,11 +93,11 @@ const socialLinks = [
 
 				<!-- Support Links -->
 				<div>
-					<h3 class="font-heading font-bold text-lg mb-4">Поддержка</h3>
+					<h3 class="font-heading font-bold text-lg mb-4">{{ t('footer.sections.support') }}</h3>
 					<ul class="space-y-3">
 						<li v-for="link in footerLinks.support" :key="link.name">
 							<NuxtLink
-								:to="link.path"
+								:to="link.path.startsWith('#') ? link.path : localePath(link.path)"
 								class="text-dark-300 hover:text-white transition-colors"
 							>
 								{{ link.name }}
@@ -108,12 +109,12 @@ const socialLinks = [
 				<!-- Legal Links -->
 				<div>
 					<h3 class="font-heading font-bold text-lg mb-4">
-						Правовая информация
+						{{ t('footer.sections.legal') }}
 					</h3>
 					<ul class="space-y-3">
 						<li v-for="link in footerLinks.legal" :key="link.name">
 							<NuxtLink
-								:to="link.path"
+								:to="link.path.startsWith('#') ? link.path : localePath(link.path)"
 								class="text-dark-300 hover:text-white transition-colors text-sm"
 							>
 								{{ link.name }}
@@ -129,10 +130,10 @@ const socialLinks = [
 					class="flex flex-col md:flex-row items-center justify-between gap-4"
 				>
 					<p class="text-dark-400 text-sm">
-						© {{ currentYear }} UniPark. Все права защищены.
+						© {{ currentYear }} UniPark. {{ t('common.allRightsReserved') }}
 					</p>
 					<p class="text-dark-400 text-sm">
-						Сделано с ❤️ для автоматизации парковок
+						{{ t('common.madeWith') }}
 					</p>
 				</div>
 			</div>

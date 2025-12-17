@@ -1,122 +1,128 @@
 <script setup lang="ts">
 import type { Feature } from '~/types'
 
+const { t } = useI18n()
+
 definePageMeta({
   layout: 'default'
 })
 
-useSEO({
-  title: 'Возможности UniPark - Интеллектуальная система управления парковкой',
-  description: 'Автоматическое распознавание номеров, гибкие тарифы, аналитика и интеграции - всё для эффективного управления парковкой',
-  keywords: 'возможности системы парковки, распознавание номеров, управление парковкой, автоматизация'
+useHead({
+  title: () => t('seo.features.title'),
+  meta: [
+    { name: 'description', content: () => t('seo.features.description') },
+    { name: 'keywords', content: () => t('seo.features.keywords') },
+    { property: 'og:title', content: () => t('seo.features.title') },
+    { property: 'og:description', content: () => t('seo.features.description') }
+  ]
 })
 
-const mainFeatures: Feature[] = [
+const mainFeatures = computed<Feature[]>(() => [
   {
-    title: 'Распознавание номеров',
-    description: 'Автоматическое распознавание государственных номеров через камеры с точностью 99.5%. Поддержка всех типов номеров и работа в любых погодных условиях.',
+    title: t('features.main.recognition.title'),
+    description: t('features.main.recognition.description'),
     icon: 'lucide:camera'
   },
   {
-    title: 'Гибкие тарифы',
-    description: 'Настройте любые тарифные планы: почасовые, посуточные, абонементы. Разные тарифы для разных зон парковки и типов клиентов.',
+    title: t('features.main.flexibleTariffs.title'),
+    description: t('features.main.flexibleTariffs.description'),
     icon: 'lucide:calculator'
   },
   {
-    title: 'Контроль доступа',
-    description: 'Автоматическое открытие шлагбаума для зарегистрированных автомобилей. Белые и черные списки. История всех въездов и выездов.',
+    title: t('features.main.accessControl.title'),
+    description: t('features.main.accessControl.description'),
     icon: 'lucide:shield-check'
   },
   {
-    title: 'Аналитика и отчеты',
-    description: 'Детальная статистика по загрузке парковки, выручке, популярным часам. Экспорт отчетов в Excel и PDF. Прогнозирование загрузки.',
+    title: t('features.main.analytics.title'),
+    description: t('features.main.analytics.description'),
     icon: 'lucide:line-chart'
   },
   {
-    title: 'Интеграции',
-    description: 'REST API для интеграции с вашими системами. Webhook уведомления. Готовые интеграции с 1С, CRM и платежными системами.',
+    title: t('features.main.integrations.title'),
+    description: t('features.main.integrations.description'),
     icon: 'lucide:plug'
   },
   {
-    title: 'Мобильное приложение',
-    description: 'Управляйте парковкой со смартфона. Получайте уведомления о событиях. Проверяйте статистику в реальном времени.',
+    title: t('features.main.mobileApp.title'),
+    description: t('features.main.mobileApp.description'),
     icon: 'lucide:smartphone'
   }
-]
+])
 
-const additionalFeatures: Feature[] = [
+const additionalFeatures = computed<Feature[]>(() => [
   {
-    title: 'Безопасность данных',
-    description: 'Шифрование всех данных. Регулярное резервное копирование. Соответствие требованиям 152-ФЗ.',
+    title: t('features.additional.dataSecurity.title'),
+    description: t('features.additional.dataSecurity.description'),
     icon: 'lucide:lock'
   },
   {
-    title: 'Техподдержка 24/7',
-    description: 'Круглосуточная поддержка по телефону и в чате. Помощь в настройке и обновлениях.',
+    title: t('features.additional.support247.title'),
+    description: t('features.additional.support247.description'),
     icon: 'lucide:headphones'
   },
   {
-    title: 'Масштабируемость',
-    description: 'От 1 до 1000+ камер. Поддержка нескольких парковок в одной системе.',
+    title: t('features.additional.scalability.title'),
+    description: t('features.additional.scalability.description'),
     icon: 'lucide:maximize-2'
   },
   {
-    title: 'Обновления',
-    description: 'Регулярные обновления с новыми функциями. Автоматическая установка без простоя.',
+    title: t('features.additional.updates.title'),
+    description: t('features.additional.updates.description'),
     icon: 'lucide:refresh-cw'
   },
   {
-    title: 'Уведомления',
-    description: 'Email и SMS уведомления клиентам. Push-уведомления администраторам. Настраиваемые триггеры.',
+    title: t('features.additional.notifications.title'),
+    description: t('features.additional.notifications.description'),
     icon: 'lucide:bell'
   },
   {
-    title: 'Мультиязычность',
-    description: 'Поддержка русского, английского и других языков. Локализация интерфейса и отчетов.',
+    title: t('features.additional.multilingual.title'),
+    description: t('features.additional.multilingual.description'),
     icon: 'lucide:languages'
   }
-]
+])
 
-const timeline = [
+const timeline = computed(() => [
   {
     number: 1,
-    title: 'Установка камер',
-    description: 'Устанавливаем камеры на въезде и выезде с парковки. Настраиваем оптимальный угол обзора для распознавания номеров.',
+    title: t('features.howItWorks.step1.title'),
+    description: t('features.howItWorks.step1.description'),
     icon: 'lucide:camera'
   },
   {
     number: 2,
-    title: 'Настройка тарифов',
-    description: 'Создаем тарифные планы под ваш бизнес. Настраиваем зоны парковки, абонементы и специальные предложения.',
+    title: t('features.howItWorks.step2.title'),
+    description: t('features.howItWorks.step2.description'),
     icon: 'lucide:settings'
   },
   {
     number: 3,
-    title: 'Запуск системы',
-    description: 'Тестируем систему и запускаем в работу. Обучаем ваших сотрудников работе с панелью управления.',
+    title: t('features.howItWorks.step3.title'),
+    description: t('features.howItWorks.step3.description'),
     icon: 'lucide:play-circle'
   },
   {
     number: 4,
-    title: 'Мониторинг',
-    description: 'Отслеживаем работу системы 24/7. Анализируем данные и оптимизируем настройки для максимальной эффективности.',
+    title: t('features.howItWorks.step4.title'),
+    description: t('features.howItWorks.step4.description'),
     icon: 'lucide:activity'
   }
-]
+])
 </script>
 
 <template>
   <div>
     <!-- Hero Section -->
     <PageHero
-      title="Возможности UniPark"
-      subtitle="Полный набор инструментов для автоматизации и управления вашей парковкой"
+      :title="t('features.hero.title')"
+      :subtitle="t('features.hero.subtitle')"
     />
 
     <!-- Main Features -->
     <FeaturesGrid
-      title="Ключевые возможности"
-      subtitle="Всё необходимое для эффективной работы парковки"
+      :title="t('features.main.title')"
+      :subtitle="t('features.main.subtitle')"
       :features="mainFeatures"
     />
 
@@ -126,12 +132,12 @@ const timeline = [
         <div class="text-center mb-16">
           <ScrollReveal>
             <h2 class="text-4xl md:text-5xl font-heading font-bold text-dark-900 mb-4">
-              Интерфейс системы
+              {{ t('features.interface.title') }}
             </h2>
           </ScrollReveal>
           <ScrollReveal :delay="200">
             <p class="text-xl text-dark-600 max-w-2xl mx-auto">
-              Удобная панель управления с полным контролем над парковкой
+              {{ t('features.interface.subtitle') }}
             </p>
           </ScrollReveal>
         </div>
@@ -141,7 +147,7 @@ const timeline = [
             <div class="relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300">
               <NuxtImg
                 src="/images/screenshots/1.jpg"
-                alt="Панель управления UniPark"
+                :alt="t('features.interface.dashboard')"
                 class="w-full h-auto"
                 loading="lazy"
                 format="webp"
@@ -153,7 +159,7 @@ const timeline = [
             <div class="relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300">
               <NuxtImg
                 src="/images/screenshots/2.jpg"
-                alt="Аналитика и отчеты"
+                :alt="t('features.interface.analytics')"
                 class="w-full h-auto"
                 loading="lazy"
                 format="webp"
@@ -165,7 +171,7 @@ const timeline = [
             <div class="relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300">
               <NuxtImg
                 src="/images/screenshots/3.jpg"
-                alt="Управление тарифами"
+                :alt="t('features.interface.tariffs')"
                 class="w-full h-auto"
                 loading="lazy"
                 format="webp"
@@ -177,7 +183,7 @@ const timeline = [
             <div class="relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300">
               <NuxtImg
                 src="/images/screenshots/4.jpg"
-                alt="Мониторинг в реальном времени"
+                :alt="t('features.interface.monitoring')"
                 class="w-full h-auto"
                 loading="lazy"
                 format="webp"
@@ -194,12 +200,12 @@ const timeline = [
         <div class="text-center mb-16">
           <ScrollReveal>
             <h2 class="text-4xl md:text-5xl font-heading font-bold text-dark-900 mb-4">
-              Как это работает
+              {{ t('features.howItWorks.title') }}
             </h2>
           </ScrollReveal>
           <ScrollReveal :delay="200">
             <p class="text-xl text-dark-600 max-w-2xl mx-auto">
-              От установки до полноценной работы за 4 простых шага
+              {{ t('features.howItWorks.subtitle') }}
             </p>
           </ScrollReveal>
         </div>
@@ -224,18 +230,18 @@ const timeline = [
 
     <!-- Additional Features -->
     <FeaturesGrid
-      title="Дополнительные возможности"
-      subtitle="Ещё больше функций для комфортной работы"
+      :title="t('features.additional.title')"
+      :subtitle="t('features.additional.subtitle')"
       :features="additionalFeatures"
       :columns="3"
     />
 
     <!-- CTA -->
     <CTASection
-      title="Готовы попробовать UniPark?"
-      subtitle="Получите бесплатный доступ на 14 дней и оцените все возможности системы"
-      button-text="Начать бесплатный период"
-      secondary-button-text="Связаться с экспертом"
+      :title="t('features.cta.title')"
+      :subtitle="t('features.cta.subtitle')"
+      :button-text="t('common.startFreeTrial')"
+      :secondary-button-text="t('features.cta.contactExpert')"
       secondary-button-icon="lucide:message-circle"
     />
   </div>

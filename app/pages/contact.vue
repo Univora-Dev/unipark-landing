@@ -1,66 +1,70 @@
 <script setup lang="ts">
 import type { ContactFormData } from '~/types'
 
+const { t } = useI18n()
+
 definePageMeta({
   layout: 'default'
 })
 
-useSEO({
-  title: 'Контакты UniPark - Свяжитесь с нами',
-  description: 'Остались вопросы? Свяжитесь с нами любым удобным способом. Ответим в течение 15 минут.',
-  keywords: 'контакты unipark, связаться с нами, техподдержка, консультация'
+useHead({
+  title: () => t('seo.contact.title'),
+  meta: [
+    { name: 'description', content: () => t('seo.contact.description') },
+    { name: 'keywords', content: () => t('seo.contact.keywords') },
+    { property: 'og:title', content: () => t('seo.contact.title') },
+    { property: 'og:description', content: () => t('seo.contact.description') }
+  ]
 })
 
 const handleSubmit = async (data: ContactFormData) => {
   console.log('Form submitted:', data)
-  // TODO: Отправить данные на API
-  // В будущем здесь будет реальная отправка на ваш API endpoint
 }
 
-const contactInfo = [
+const contactInfo = computed(() => [
   {
     icon: 'lucide:mail',
-    title: 'Email',
+    title: t('contact.info.email.title'),
     value: 'info@unipark.io',
-    description: 'Ответим в течение 1 часа',
+    description: t('contact.info.email.description'),
     link: 'mailto:info@unipark.io'
   },
   {
     icon: 'lucide:phone',
-    title: 'Телефон',
+    title: t('contact.info.phone.title'),
     value: '+7 (495) 123-45-67',
-    description: 'Пн-Пт с 9:00 до 18:00',
+    description: t('contact.info.phone.description'),
     link: 'tel:+74951234567'
   },
   {
     icon: 'lucide:message-circle',
-    title: 'Telegram',
+    title: t('contact.info.telegram.title'),
     value: '@unipark_support',
-    description: 'Быстрые ответы 24/7',
+    description: t('contact.info.telegram.description'),
     link: 'https://t.me/unipark_support'
   },
   {
     icon: 'lucide:map-pin',
-    title: 'Офис',
+    title: t('contact.info.office.title'),
     value: 'Москва, ул. Примерная, 123',
-    description: 'Посещение по записи',
+    description: t('contact.info.office.description'),
     link: '#'
   }
-]
+])
 
-const workingHours = [
-  { day: 'Понедельник - Пятница', time: '9:00 - 18:00' },
-  { day: 'Суббота', time: '10:00 - 16:00' },
-  { day: 'Воскресенье', time: 'Выходной' }
-]
+const workingHours = computed(() => [
+  { day: t('contact.workingHours.mondayFriday'), time: '9:00 - 18:00' },
+  { day: t('contact.workingHours.saturday'), time: '10:00 - 16:00' },
+  { day: t('contact.workingHours.sunday'), time: t('contact.workingHours.closed') }
+])
 </script>
 
 <template>
   <div>
     <!-- Hero Section -->
     <PageHero
-      title="Свяжитесь с нами"
-      subtitle="Ответим на все ваши вопросы и поможем подобрать оптимальное решение для вашего бизнеса"
+      :title="t('contact.hero.title')"
+      :subtitle="t('contact.hero.subtitle')"
     />
 
     <!-- Contact Info Cards -->
@@ -103,10 +107,10 @@ const workingHours = [
             <ScrollReveal>
               <Card class="p-8">
                 <h2 class="text-3xl font-heading font-bold text-dark-900 mb-2">
-                  Отправьте нам сообщение
+                  {{ t('contact.form.title') }}
                 </h2>
                 <p class="text-dark-600 mb-8">
-                  Заполните форму ниже, и мы свяжемся с вами в ближайшее время
+                  {{ t('contact.form.subtitle') }}
                 </p>
                 <ContactForm @submit="handleSubmit" />
               </Card>
@@ -123,7 +127,7 @@ const workingHours = [
                     <Icon name="lucide:clock" class="w-5 h-5 text-primary-600" />
                   </div>
                   <h3 class="text-xl font-heading font-bold text-dark-900">
-                    Часы работы
+                    {{ t('contact.workingHours.title') }}
                   </h3>
                 </div>
                 <div class="space-y-3">
@@ -147,7 +151,7 @@ const workingHours = [
                     <Icon name="lucide:help-circle" class="w-5 h-5 text-accent-600" />
                   </div>
                   <h3 class="text-xl font-heading font-bold text-dark-900">
-                    Полезные ссылки
+                    {{ t('contact.quickLinks.title') }}
                   </h3>
                 </div>
                 <div class="space-y-3">
@@ -156,28 +160,28 @@ const workingHours = [
                     class="flex items-center gap-2 text-dark-700 hover:text-primary-600 transition-colors"
                   >
                     <Icon name="lucide:book-open" class="w-4 h-4" />
-                    <span>База знаний</span>
+                    <span>{{ t('contact.quickLinks.knowledgeBase') }}</span>
                   </NuxtLink>
                   <NuxtLink
                     to="#"
                     class="flex items-center gap-2 text-dark-700 hover:text-primary-600 transition-colors"
                   >
                     <Icon name="lucide:file-text" class="w-4 h-4" />
-                    <span>Документация API</span>
+                    <span>{{ t('contact.quickLinks.apiDocs') }}</span>
                   </NuxtLink>
                   <NuxtLink
                     to="#"
                     class="flex items-center gap-2 text-dark-700 hover:text-primary-600 transition-colors"
                   >
                     <Icon name="lucide:video" class="w-4 h-4" />
-                    <span>Видеоуроки</span>
+                    <span>{{ t('contact.quickLinks.videoTutorials') }}</span>
                   </NuxtLink>
                   <NuxtLink
                     to="#"
                     class="flex items-center gap-2 text-dark-700 hover:text-primary-600 transition-colors"
                   >
                     <Icon name="lucide:message-square" class="w-4 h-4" />
-                    <span>Форум поддержки</span>
+                    <span>{{ t('contact.quickLinks.supportForum') }}</span>
                   </NuxtLink>
                 </div>
               </Card>
@@ -187,7 +191,7 @@ const workingHours = [
             <ScrollReveal :delay="400">
               <Card class="p-6">
                 <h3 class="text-xl font-heading font-bold text-dark-900 mb-4">
-                  Мы в соцсетях
+                  {{ t('contact.social.title') }}
                 </h3>
                 <div class="flex gap-3">
                   <a
@@ -221,7 +225,7 @@ const workingHours = [
       <div class="container-custom">
         <ScrollReveal>
           <h2 class="text-4xl font-heading font-bold text-dark-900 mb-8 text-center">
-            Наш офис на карте
+            {{ t('contact.map.title') }}
           </h2>
         </ScrollReveal>
         <ScrollReveal :delay="200">
@@ -229,7 +233,7 @@ const workingHours = [
             <div class="text-center">
               <Icon name="lucide:map-pin" class="w-16 h-16 text-dark-400 mx-auto mb-4" />
               <p class="text-dark-600">
-                Здесь будет карта с местоположением офиса
+                {{ t('contact.map.placeholder') }}
               </p>
             </div>
           </div>
@@ -239,11 +243,11 @@ const workingHours = [
 
     <!-- CTA -->
     <CTASection
-      title="Предпочитаете живое общение?"
-      subtitle="Запишитесь на онлайн-демонстрацию системы с нашим экспертом"
-      button-text="Записаться на демо"
+      :title="t('contact.cta.title')"
+      :subtitle="t('contact.cta.subtitle')"
+      :button-text="t('contact.cta.bookDemo')"
       button-icon="lucide:video"
-      secondary-button-text="Задать вопрос"
+      :secondary-button-text="t('contact.cta.askQuestion')"
       secondary-button-icon="lucide:message-circle"
     />
   </div>

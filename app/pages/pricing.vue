@@ -1,195 +1,181 @@
 <script setup lang="ts">
 import type { PricingPlan, FAQItem } from '~/types';
 
+const { t } = useI18n();
+
 definePageMeta({
 	layout: 'default',
 });
 
-useSEO({
-	title: 'Тарифлар - UniPark автотураргоҳ бошқарув тизими',
-	description:
-		'UniPark SaaS тарифлари. Автотураргоҳ сиғимига асосланган шаффоф нархлар. Small Park дан Mega Park гача.',
-	keywords:
-		'unipark тарифлар, автотураргоҳ тизими нархлари, parking system pricing',
+useHead({
+	title: () => t('seo.pricing.title'),
+	meta: [
+		{ name: 'description', content: () => t('seo.pricing.description') },
+		{ name: 'keywords', content: () => t('seo.pricing.keywords') },
+		{ property: 'og:title', content: () => t('seo.pricing.title') },
+		{ property: 'og:description', content: () => t('seo.pricing.description') }
+	]
 });
 
-const plans: PricingPlan[] = [
+const plans = computed<PricingPlan[]>(() => [
 	{
-		name: 'Small Park',
-		description: 'Кичик шаҳар, туман марказлари, хусусий автотураргоҳлар',
-		capacity: '20 — 100 та авто',
+		name: t('pricing.plans.small.name'),
+		description: t('pricing.plans.small.description'),
+		capacity: t('pricing.plans.small.capacity'),
 		price: '400 000',
-		priceDescription: 'сўм / ой',
-		period: 'ой',
-		yearlyDiscount: '−10% (12 ой), −20% (24 ой)',
+		priceDescription: t('pricing.perMonthPrice'),
+		period: t('common.month'),
+		yearlyDiscount: t('pricing.yearlyDiscount'),
 		features: [
-			'2 та камера',
-			'1 та шлагбаум',
-			'3 та фойдаланувчи',
-			'Базавий ҳисоботлар',
-			'Email қўллаб-қувватлаш',
-			'7 кунлик резерв нусха',
+			`2 ${t('pricing.features.cameras')}`,
+			`1 ${t('pricing.features.barriers')}`,
+			`3 ${t('pricing.features.users')}`,
+			t('pricing.features.basicReports'),
+			t('pricing.features.emailSupport'),
+			t('pricing.features.backup7'),
 			'99.5% SLA',
 		],
-		buttonText: 'Танлаш',
+		buttonText: t('common.select'),
 	},
 	{
-		name: 'Medium Park',
-		description: 'Шаҳар ичи, савдо марказлари атрофи',
-		capacity: '101 — 200 та авто',
+		name: t('pricing.plans.medium.name'),
+		description: t('pricing.plans.medium.description'),
+		capacity: t('pricing.plans.medium.capacity'),
 		price: '800 000',
-		priceDescription: 'сўм / ой',
-		period: 'ой',
-		yearlyDiscount: '−10% (12 ой), −20% (24 ой)',
+		priceDescription: t('pricing.perMonthPrice'),
+		period: t('common.month'),
+		yearlyDiscount: t('pricing.yearlyDiscount'),
 		popular: true,
 		features: [
-			'4 та камера',
-			'2 та шлагбаум',
-			'5 та фойдаланувчи',
-			'Кенгайтирилган ҳисоботлар',
-			'Email + Chat қўллаб-қувватлаш',
-			'14 кунлик резерв нусха',
-			'Чекланган интеграция',
+			`4 ${t('pricing.features.cameras')}`,
+			`2 ${t('pricing.features.barriers')}`,
+			`5 ${t('pricing.features.users')}`,
+			t('pricing.features.advancedReports'),
+			t('pricing.features.emailChatSupport'),
+			t('pricing.features.backup14'),
+			t('pricing.features.limitedIntegration'),
 			'99.5% SLA',
 		],
-		buttonText: 'Танлаш',
+		buttonText: t('common.select'),
 	},
 	{
-		name: 'Large Park',
-		description: 'Йирик шаҳарлар, бозорлар, вокзаллар',
-		capacity: '201 — 500 та авто',
+		name: t('pricing.plans.large.name'),
+		description: t('pricing.plans.large.description'),
+		capacity: t('pricing.plans.large.capacity'),
 		price: '1 600 000',
-		priceDescription: 'сўм / ой',
-		period: 'ой',
-		yearlyDiscount: '−10% (12 ой), −20% (24 ой)',
+		priceDescription: t('pricing.perMonthPrice'),
+		period: t('common.month'),
+		yearlyDiscount: t('pricing.yearlyDiscount'),
 		features: [
-			'8 та камера',
-			'4 та шлагбаум',
-			'10 та фойдаланувчи',
-			'Кенгайтирилган ҳисоботлар',
-			'24×7 қўллаб-қувватлаш',
-			'30 кунлик резерв нусха',
-			'API ва тўлиқ интеграция',
+			`8 ${t('pricing.features.cameras')}`,
+			`4 ${t('pricing.features.barriers')}`,
+			`10 ${t('pricing.features.users')}`,
+			t('pricing.features.advancedReports'),
+			t('pricing.features.support247'),
+			t('pricing.features.backup30'),
+			t('pricing.features.fullIntegration'),
 			'99.9% SLA',
 		],
-		buttonText: 'Танлаш',
+		buttonText: t('common.select'),
 	},
 	{
-		name: 'Mega Park',
-		description: 'Мегаполис, аэропорт, стадион, давлат объектлари',
-		capacity: '501 — 1000 та авто',
+		name: t('pricing.plans.mega.name'),
+		description: t('pricing.plans.mega.description'),
+		capacity: t('pricing.plans.mega.capacity'),
 		price: '3 000 000',
-		priceDescription: 'сўм / ой',
-		period: 'ой',
-		yearlyDiscount: 'Индивидуал шартлар',
+		priceDescription: t('pricing.perMonthPrice'),
+		period: t('common.month'),
+		yearlyDiscount: t('pricing.individualTerms'),
 		features: [
-			'16+ камера',
-			'8+ шлагбаум',
-			'20+ фойдаланувчи',
-			'Махсус ҳисоботлар',
-			'Шахсий менежер',
-			'90 кунлик резерв нусха',
-			'API ва тўлиқ интеграция',
+			`16+ ${t('pricing.features.cameras')}`,
+			`8+ ${t('pricing.features.barriers')}`,
+			`20+ ${t('pricing.features.users')}`,
+			t('pricing.features.customReports'),
+			t('pricing.features.personalManager'),
+			t('pricing.features.backup90'),
+			t('pricing.features.fullIntegration'),
 			'99.9% SLA',
 		],
-		buttonText: 'Боғланиш',
+		buttonText: t('common.contactUs'),
 	},
-];
+]);
 
 // Региональные коэффициенты
-const regionCoefficients = [
-	{ category: 'A', region: 'Тошкент ш., марказий туманлар', coefficient: '1.0' },
-	{ category: 'B', region: 'Вилоят марказлари', coefficient: '0.85' },
-	{ category: 'C', region: 'Туман марказлари', coefficient: '0.7' },
-	{ category: 'D', region: 'Қишлоқ, кичик аҳоли пункти', coefficient: '0.6' },
-];
+const regionCoefficients = computed(() => [
+	{ category: 'A', region: t('pricing.coefficients.region.a'), coefficient: '1.0' },
+	{ category: 'B', region: t('pricing.coefficients.region.b'), coefficient: '0.85' },
+	{ category: 'C', region: t('pricing.coefficients.region.c'), coefficient: '0.7' },
+	{ category: 'D', region: t('pricing.coefficients.region.d'), coefficient: '0.6' },
+]);
 
 // Коэффициенты транспортного потока
-const flowCoefficients = [
-	{ level: 'Паст', description: 'Кам кирим-чиқим', coefficient: '0.9' },
-	{ level: 'Ўрта', description: 'Кун давомида барқарор', coefficient: '1.0' },
-	{ level: 'Юқори', description: 'Катта навбат, юқори тушум', coefficient: '1.15' },
-];
+const flowCoefficients = computed(() => [
+	{ level: t('pricing.coefficients.flow.low'), description: t('pricing.coefficients.flow.lowDesc'), coefficient: '0.9' },
+	{ level: t('pricing.coefficients.flow.medium'), description: t('pricing.coefficients.flow.mediumDesc'), coefficient: '1.0' },
+	{ level: t('pricing.coefficients.flow.high'), description: t('pricing.coefficients.flow.highDesc'), coefficient: '1.15' },
+]);
 
 // Разовые услуги установки
-const installationServices = [
-	{ plan: 'Small Park', price: '3 000 000 сўм', description: 'Базавий конфигурация' },
-	{ plan: 'Medium Park', price: '5 000 000 сўм', description: 'Кенгайтирилган созлаш' },
-	{ plan: 'Large Park', price: '8 000 000 сўм', description: 'Мураккаб интеграция' },
-	{ plan: 'Mega Park', price: '12 000 000 сўм', description: 'Enterprise даражаси' },
-];
+const installationServices = computed(() => [
+	{ plan: t('pricing.plans.small.name'), price: '3 000 000', description: t('pricing.installation.baseConfig') },
+	{ plan: t('pricing.plans.medium.name'), price: '5 000 000', description: t('pricing.installation.advancedSetup') },
+	{ plan: t('pricing.plans.large.name'), price: '8 000 000', description: t('pricing.installation.complexIntegration') },
+	{ plan: t('pricing.plans.mega.name'), price: '12 000 000', description: t('pricing.installation.enterpriseLevel') },
+]);
 
 // Что входит в установку
-const installationIncludes = [
+const installationIncludes = computed(() => [
 	{
-		title: 'Техник ишлар',
+		title: t('pricing.installation.includes.technical.title'),
 		icon: 'lucide:server',
-		items: [
-			'Сервер муҳитини тайёрлаш (Cloud / On-premise)',
-			'Камера ва шлагбаумларни улаш',
-			'Локал тармоқ ва интернет конфигурацияси',
-		],
+		items: t('pricing.installation.includes.technical.items'),
 	},
 	{
-		title: 'Дастурий ишлар',
+		title: t('pricing.installation.includes.software.title'),
 		icon: 'lucide:settings',
-		items: [
-			'Тарифлар ва ҳудудий коэффициентларни созлаш',
-			'Фойдаланувчи роллари ва ҳуқуқлари',
-			'Ҳисоботлар ва журналлар',
-		],
+		items: t('pricing.installation.includes.software.items'),
 	},
 	{
-		title: 'Ўқитиш',
+		title: t('pricing.installation.includes.training.title'),
 		icon: 'lucide:graduation-cap',
-		items: [
-			'Администраторлар учун (1 кун)',
-			'Операторлар учун (1 кун)',
-			'Қўлланма ва видео йўриқномалар',
-		],
+		items: t('pricing.installation.includes.training.items'),
 	},
-];
+]);
 
-const faqItems: FAQItem[] = [
+const faqItems = computed<FAQItem[]>(() => [
 	{
-		question: 'Ҳудудий коэффициент қандай ҳисобланади?',
-		answer:
-			'Якуний нарх = базавий тариф × ҳудуд коэффициенти × оқим коэффициенти. Масалан, Тошкент марказида юқори оқимли автотураргоҳ учун: базавий нарх × 1.0 × 1.15.',
+		question: t('pricing.faq.items.coefficient.question'),
+		answer: t('pricing.faq.items.coefficient.answer'),
 	},
 	{
-		question: 'Қўшимча дарвоза (gate) қўшса нарх қанча ошади?',
-		answer:
-			'Ҳар бир қўшимча дарвоза учун +300 000 сўм/ой тўланади. Қўшимча автотураргоҳ объекти эса алоҳида тарифланади.',
+		question: t('pricing.faq.items.additionalGate.question'),
+		answer: t('pricing.faq.items.additionalGate.answer'),
 	},
 	{
-		question: 'Йиллик тўловда қандай чегирма бор?',
-		answer:
-			'12 ойлик тўловда −10% чегирма, 24 ойлик тўловда −20% чегирма берилади. Mega Park учун индивидуал шартлар муҳокама қилинади.',
+		question: t('pricing.faq.items.yearlyDiscount.question'),
+		answer: t('pricing.faq.items.yearlyDiscount.answer'),
 	},
 	{
-		question: 'Давлат ташкилотлари учун алоҳида шартлар борми?',
-		answer:
-			'Ҳа, давлат ва йирик мижозлар учун Enterprise Custom тариф мавжуд: SaaS + On-premise hybrid, индивидуал функционал, UZS/USD ҳисоб-китоб, давлат ахборот тизимлари билан интеграция, алоҳида SLA ва шартнома.',
+		question: t('pricing.faq.items.government.question'),
+		answer: t('pricing.faq.items.government.answer'),
 	},
 	{
-		question: 'Ўрнатиш хизмати нимани ўз ичига олади?',
-		answer:
-			'Бир марталик ўрнатиш хизмати: сервер ва тармоқ созлаш, камера ва шлагбаумларни улаш, тарифлар ва роллар конфигурацияси, администратор ва операторларни ўқитиш, қўлланма ва видео йўриқномалар.',
+		question: t('pricing.faq.items.installation.question'),
+		answer: t('pricing.faq.items.installation.answer'),
 	},
 	{
-		question: 'Тизим ўзини қанча вақтда қоплайди?',
-		answer:
-			'Мисол: Large Park — бир марталик 8 000 000 сўм + 12 ойлик SaaS ≈ 19 200 000 сўм. Жами 1 йиллик харажат ≈ 27.2 млн сўм. Амалиётда тўлов интизоми ва шаффоф назорат орқали 6—9 ойда ўзини қоплайди.',
+		question: t('pricing.faq.items.roi.question'),
+		answer: t('pricing.faq.items.roi.answer'),
 	},
-];
+]);
 </script>
 
 <template>
 	<div>
 		<!-- Hero Section -->
 		<PageHero
-			title="Шаффоф тарифлар"
-			subtitle="Автотураргоҳ сиғимига асосланган мослашувчан SaaS тарифлар"
+			:title="t('pricing.hero.title')"
+			:subtitle="t('pricing.hero.subtitle')"
 		/>
 
 		<!-- Pricing Cards -->
@@ -211,7 +197,7 @@ const faqItems: FAQItem[] = [
 							]"
 						>
 							<div v-if="plan.popular" class="absolute top-0 right-0 bg-primary-500 text-white px-4 py-1 text-sm font-semibold rounded-bl-lg rounded-tr-lg">
-								Оммабоп
+								{{ t('common.popular') }}
 							</div>
 
 							<div class="p-6">
@@ -273,7 +259,7 @@ const faqItems: FAQItem[] = [
 					<div class="mt-8 text-center">
 						<p class="text-dark-600">
 							<Icon name="lucide:plus-circle" class="w-5 h-5 inline mr-2" />
-							Қўшимча дарвоза (gate): <strong class="text-dark-900">+300 000 сўм/ой</strong>
+							{{ t('pricing.additionalGate') }}: <strong class="text-dark-900">+300 000 {{ t('pricing.perMonthPrice') }}</strong>
 						</p>
 					</div>
 				</ScrollReveal>
@@ -286,12 +272,12 @@ const faqItems: FAQItem[] = [
 				<div class="text-center mb-16">
 					<ScrollReveal>
 						<h2 class="text-4xl md:text-5xl font-heading font-bold text-dark-900 mb-4">
-							Ҳудудий коэффициентлар
+							{{ t('pricing.coefficients.title') }}
 						</h2>
 					</ScrollReveal>
 					<ScrollReveal :delay="200">
 						<p class="text-xl text-dark-600 max-w-3xl mx-auto">
-							Тарифлар мижоз жойлашган ҳудуд ва транспорт оқимига қараб коэффициент асосида ҳисобланади
+							{{ t('pricing.coefficients.subtitle') }}
 						</p>
 					</ScrollReveal>
 				</div>
@@ -302,15 +288,15 @@ const faqItems: FAQItem[] = [
 						<Card class="p-6">
 							<h3 class="text-xl font-heading font-bold text-dark-900 mb-6 flex items-center gap-2">
 								<Icon name="lucide:map-pin" class="w-6 h-6 text-primary-600" />
-								Ҳудуд категориялари
+								{{ t('pricing.coefficients.region.title') }}
 							</h3>
 							<div class="overflow-x-auto">
 								<table class="w-full">
 									<thead>
 										<tr class="border-b-2 border-dark-200">
-											<th class="text-left py-3 px-2 font-semibold text-dark-900">Категория</th>
-											<th class="text-left py-3 px-2 font-semibold text-dark-900">Ҳудуд</th>
-											<th class="text-center py-3 px-2 font-semibold text-dark-900">Коэф.</th>
+											<th class="text-left py-3 px-2 font-semibold text-dark-900">{{ t('pricing.coefficients.region.category') }}</th>
+											<th class="text-left py-3 px-2 font-semibold text-dark-900">{{ t('pricing.coefficients.region.regionName') }}</th>
+											<th class="text-center py-3 px-2 font-semibold text-dark-900">{{ t('pricing.coefficients.region.coefficient') }}</th>
 										</tr>
 									</thead>
 									<tbody class="text-dark-700">
@@ -334,15 +320,15 @@ const faqItems: FAQItem[] = [
 						<Card class="p-6">
 							<h3 class="text-xl font-heading font-bold text-dark-900 mb-6 flex items-center gap-2">
 								<Icon name="lucide:activity" class="w-6 h-6 text-primary-600" />
-								Транспорт оқими коэффициенти
+								{{ t('pricing.coefficients.flow.title') }}
 							</h3>
 							<div class="overflow-x-auto">
 								<table class="w-full">
 									<thead>
 										<tr class="border-b-2 border-dark-200">
-											<th class="text-left py-3 px-2 font-semibold text-dark-900">Даража</th>
-											<th class="text-left py-3 px-2 font-semibold text-dark-900">Таъриф</th>
-											<th class="text-center py-3 px-2 font-semibold text-dark-900">Коэф.</th>
+											<th class="text-left py-3 px-2 font-semibold text-dark-900">{{ t('pricing.coefficients.flow.level') }}</th>
+											<th class="text-left py-3 px-2 font-semibold text-dark-900">{{ t('pricing.coefficients.flow.description') }}</th>
+											<th class="text-center py-3 px-2 font-semibold text-dark-900">{{ t('pricing.coefficients.region.coefficient') }}</th>
 										</tr>
 									</thead>
 									<tbody class="text-dark-700">
@@ -363,12 +349,12 @@ const faqItems: FAQItem[] = [
 					<div class="mt-12 max-w-3xl mx-auto">
 						<Card class="p-6 bg-gradient-to-r from-primary-50 to-accent-50 border-primary-200">
 							<div class="text-center">
-								<p class="text-lg text-dark-700 mb-2">Якуний нарх формуласи:</p>
+								<p class="text-lg text-dark-700 mb-2">{{ t('pricing.coefficients.formula.title') }}</p>
 								<p class="text-2xl font-heading font-bold text-dark-900">
-									Якуний нарх = Базавий тариф × Ҳудуд коэф. × Оқим коэф.
+									{{ t('pricing.coefficients.formula.text') }}
 								</p>
 								<p class="text-dark-600 mt-4 text-sm">
-									Мисол: Medium Park Тошкент марказида юқори оқим билан = 800 000 × 1.0 × 1.15 = <strong>920 000 сўм/ой</strong>
+									{{ t('pricing.coefficients.formula.example') }} <strong>920 000 {{ t('pricing.perMonthPrice') }}</strong>
 								</p>
 							</div>
 						</Card>
@@ -383,12 +369,12 @@ const faqItems: FAQItem[] = [
 				<div class="text-center mb-16">
 					<ScrollReveal>
 						<h2 class="text-4xl md:text-5xl font-heading font-bold text-dark-900 mb-4">
-							Бир марталик хизматлар
+							{{ t('pricing.installation.title') }}
 						</h2>
 					</ScrollReveal>
 					<ScrollReveal :delay="200">
 						<p class="text-xl text-dark-600 max-w-3xl mx-auto">
-							Ўрнатиш, созлаш ва ўқитиш хизматлари автотураргоҳ ҳажмига қараб бир марталик тўлов асосида
+							{{ t('pricing.installation.subtitle') }}
 						</p>
 					</ScrollReveal>
 				</div>
@@ -436,12 +422,12 @@ const faqItems: FAQItem[] = [
 				<div class="text-center mb-16">
 					<ScrollReveal>
 						<h2 class="text-4xl md:text-5xl font-heading font-bold text-dark-900 mb-4">
-							Тарифларни солиштириш
+							{{ t('pricing.comparison.title') }}
 						</h2>
 					</ScrollReveal>
 					<ScrollReveal :delay="200">
 						<p class="text-xl text-dark-600 max-w-2xl mx-auto">
-							Автотураргоҳингизга мос тарифни танланг
+							{{ t('pricing.comparison.subtitle') }}
 						</p>
 					</ScrollReveal>
 				</div>
@@ -453,7 +439,7 @@ const faqItems: FAQItem[] = [
 								<thead>
 									<tr class="border-b-2 border-dark-200">
 										<th class="text-left py-4 px-4 font-heading font-bold text-dark-900">
-											Функция
+											{{ t('pricing.comparison.function') }}
 										</th>
 										<th class="text-center py-4 px-4 font-heading font-bold text-dark-900">
 											Small
@@ -471,35 +457,35 @@ const faqItems: FAQItem[] = [
 								</thead>
 								<tbody class="text-dark-700">
 									<tr class="border-b border-dark-100">
-										<td class="py-4 px-4">Камера сони</td>
+										<td class="py-4 px-4">{{ t('pricing.comparison.cameras') }}</td>
 										<td class="text-center py-4 px-4">2</td>
 										<td class="text-center py-4 px-4 bg-primary-50">4</td>
 										<td class="text-center py-4 px-4">8</td>
 										<td class="text-center py-4 px-4">16+</td>
 									</tr>
 									<tr class="border-b border-dark-100">
-										<td class="py-4 px-4">Шлагбаум</td>
+										<td class="py-4 px-4">{{ t('pricing.comparison.barriers') }}</td>
 										<td class="text-center py-4 px-4">1</td>
 										<td class="text-center py-4 px-4 bg-primary-50">2</td>
 										<td class="text-center py-4 px-4">4</td>
 										<td class="text-center py-4 px-4">8+</td>
 									</tr>
 									<tr class="border-b border-dark-100">
-										<td class="py-4 px-4">Фойдаланувчи</td>
+										<td class="py-4 px-4">{{ t('pricing.comparison.users') }}</td>
 										<td class="text-center py-4 px-4">3</td>
 										<td class="text-center py-4 px-4 bg-primary-50">5</td>
 										<td class="text-center py-4 px-4">10</td>
 										<td class="text-center py-4 px-4">20+</td>
 									</tr>
 									<tr class="border-b border-dark-100">
-										<td class="py-4 px-4">Ҳисоботлар</td>
+										<td class="py-4 px-4">{{ t('pricing.comparison.reports') }}</td>
 										<td class="text-center py-4 px-4">Basic</td>
 										<td class="text-center py-4 px-4 bg-primary-50">Advanced</td>
 										<td class="text-center py-4 px-4">Advanced</td>
 										<td class="text-center py-4 px-4">Custom</td>
 									</tr>
 									<tr class="border-b border-dark-100">
-										<td class="py-4 px-4">API</td>
+										<td class="py-4 px-4">{{ t('pricing.comparison.api') }}</td>
 										<td class="text-center py-4 px-4">
 											<Icon name="lucide:x" class="w-5 h-5 text-dark-400 mx-auto" />
 										</td>
@@ -514,34 +500,34 @@ const faqItems: FAQItem[] = [
 										</td>
 									</tr>
 									<tr class="border-b border-dark-100">
-										<td class="py-4 px-4">Интеграция</td>
+										<td class="py-4 px-4">{{ t('pricing.comparison.integration') }}</td>
 										<td class="text-center py-4 px-4">
 											<Icon name="lucide:x" class="w-5 h-5 text-dark-400 mx-auto" />
 										</td>
-										<td class="text-center py-4 px-4 bg-primary-50">Чекланган</td>
-										<td class="text-center py-4 px-4">Тўлиқ</td>
-										<td class="text-center py-4 px-4">Тўлиқ</td>
+										<td class="text-center py-4 px-4 bg-primary-50">{{ t('pricing.comparison.limited') }}</td>
+										<td class="text-center py-4 px-4">{{ t('pricing.comparison.full') }}</td>
+										<td class="text-center py-4 px-4">{{ t('pricing.comparison.full') }}</td>
 									</tr>
 									<tr class="border-b border-dark-100">
-										<td class="py-4 px-4">SLA</td>
+										<td class="py-4 px-4">{{ t('pricing.comparison.sla') }}</td>
 										<td class="text-center py-4 px-4">99.5%</td>
 										<td class="text-center py-4 px-4 bg-primary-50">99.5%</td>
 										<td class="text-center py-4 px-4">99.9%</td>
 										<td class="text-center py-4 px-4">99.9%</td>
 									</tr>
 									<tr class="border-b border-dark-100">
-										<td class="py-4 px-4">Қўллаб-қувватлаш</td>
+										<td class="py-4 px-4">{{ t('pricing.comparison.support') }}</td>
 										<td class="text-center py-4 px-4">Email</td>
 										<td class="text-center py-4 px-4 bg-primary-50">Email + Chat</td>
 										<td class="text-center py-4 px-4">24×7</td>
-										<td class="text-center py-4 px-4">Шахсий менежер</td>
+										<td class="text-center py-4 px-4">{{ t('pricing.features.personalManager') }}</td>
 									</tr>
 									<tr>
-										<td class="py-4 px-4">Резерв нусха</td>
-										<td class="text-center py-4 px-4">7 кун</td>
-										<td class="text-center py-4 px-4 bg-primary-50">14 кун</td>
-										<td class="text-center py-4 px-4">30 кун</td>
-										<td class="text-center py-4 px-4">90 кун</td>
+										<td class="py-4 px-4">{{ t('pricing.comparison.backup') }}</td>
+										<td class="text-center py-4 px-4">7 {{ t('pricing.comparison.days') }}</td>
+										<td class="text-center py-4 px-4 bg-primary-50">14 {{ t('pricing.comparison.days') }}</td>
+										<td class="text-center py-4 px-4">30 {{ t('pricing.comparison.days') }}</td>
+										<td class="text-center py-4 px-4">90 {{ t('pricing.comparison.days') }}</td>
 									</tr>
 								</tbody>
 							</table>
@@ -559,35 +545,19 @@ const faqItems: FAQItem[] = [
 						<div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
 							<div>
 								<h2 class="text-3xl font-heading font-bold mb-4">
-									Enterprise Custom
+									{{ t('pricing.enterprise.title') }}
 								</h2>
 								<p class="text-dark-300 mb-6">
-									Давлат ва йирик мижозлар учун махсус ечимлар
+									{{ t('pricing.enterprise.subtitle') }}
 								</p>
 								<ul class="space-y-3 mb-8">
-									<li class="flex items-center gap-3">
+									<li v-for="feature in t('pricing.enterprise.features')" :key="feature" class="flex items-center gap-3">
 										<Icon name="lucide:check-circle" class="w-5 h-5 text-accent-400" />
-										<span>SaaS + On-premise hybrid</span>
-									</li>
-									<li class="flex items-center gap-3">
-										<Icon name="lucide:check-circle" class="w-5 h-5 text-accent-400" />
-										<span>Индивидуал функционал ва интеграциялар</span>
-									</li>
-									<li class="flex items-center gap-3">
-										<Icon name="lucide:check-circle" class="w-5 h-5 text-accent-400" />
-										<span>UZS / USD ҳисоб-китоб</span>
-									</li>
-									<li class="flex items-center gap-3">
-										<Icon name="lucide:check-circle" class="w-5 h-5 text-accent-400" />
-										<span>Давлат ахборот тизимлари билан интеграция</span>
-									</li>
-									<li class="flex items-center gap-3">
-										<Icon name="lucide:check-circle" class="w-5 h-5 text-accent-400" />
-										<span>Алоҳида SLA ва шартнома</span>
+										<span>{{ feature }}</span>
 									</li>
 								</ul>
 								<Button variant="accent" size="lg">
-									Боғланиш
+									{{ t('common.contactUs') }}
 									<Icon name="lucide:arrow-right" class="w-5 h-5 ml-2" />
 								</Button>
 							</div>
@@ -597,14 +567,14 @@ const faqItems: FAQItem[] = [
 									<div class="relative bg-dark-700 rounded-2xl p-6">
 										<div class="flex items-center gap-3 mb-4">
 											<Icon name="lucide:building-2" class="w-8 h-8 text-primary-400" />
-											<span class="font-heading font-bold text-xl">Давлат объектлари</span>
+											<span class="font-heading font-bold text-xl">{{ t('pricing.enterprise.govObjects') }}</span>
 										</div>
 										<p class="text-dark-300 text-sm mb-4">
-											Тендерлар ва давлат харидлари учун мос. Барқарор ва шаффоф нархлар.
+											{{ t('pricing.enterprise.govDescription') }}
 										</p>
 										<div class="flex items-center gap-2 text-accent-400 text-sm">
 											<Icon name="lucide:shield-check" class="w-4 h-4" />
-											<span>Маълумотлар хавфсизлиги кафолати</span>
+											<span>{{ t('pricing.enterprise.dataSecurityGuarantee') }}</span>
 										</div>
 									</div>
 								</div>
@@ -621,12 +591,12 @@ const faqItems: FAQItem[] = [
 				<div class="text-center mb-16">
 					<ScrollReveal>
 						<h2 class="text-4xl md:text-5xl font-heading font-bold text-dark-900 mb-4">
-							Кўп бериладиган саволлар
+							{{ t('pricing.faq.title') }}
 						</h2>
 					</ScrollReveal>
 					<ScrollReveal :delay="200">
 						<p class="text-xl text-dark-600 max-w-2xl mx-auto">
-							Тарифлар ва тўлов бўйича саволларга жавоблар
+							{{ t('pricing.faq.subtitle') }}
 						</p>
 					</ScrollReveal>
 				</div>
@@ -641,10 +611,10 @@ const faqItems: FAQItem[] = [
 
 		<!-- CTA -->
 		<CTASection
-			title="Бепул консультация олинг"
-			subtitle="Автотураргоҳингизга мос тарифни танлашда ёрдам берамиз"
-			button-text="Боғланиш"
-			secondary-button-text="Савол бериш"
+			:title="t('pricing.cta.title')"
+			:subtitle="t('pricing.cta.subtitle')"
+			:button-text="t('common.contactUs')"
+			:secondary-button-text="t('pricing.cta.askQuestion')"
 			secondary-button-icon="lucide:help-circle"
 		/>
 	</div>

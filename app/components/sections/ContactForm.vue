@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import type { ContactFormData } from '~/types'
 
+const { t } = useI18n()
+
 const emit = defineEmits<{
   submit: [data: ContactFormData]
 }>()
@@ -16,7 +18,6 @@ const { values: formData, errors, isValid, validate, reset } = useForm<ContactFo
 
 const isSubmitting = ref(false)
 
-// Создаем computed для безопасного доступа к errors
 const errorName = computed(() => errors.value?.name)
 const errorEmail = computed(() => errors.value?.email)
 const errorMessage = computed(() => errors.value?.message)
@@ -30,15 +31,9 @@ const handleSubmit = async () => {
   isSubmitting.value = true
 
   try {
-    // Эмитим данные формы родительскому компоненту
     emit('submit', { ...formData.value })
-
-    // Сброс формы после успешной отправки
     reset()
-
-    // TODO: Показать уведомление об успехе
   } catch (error) {
-    // TODO: Показать уведомление об ошибке
     console.error('Form submission error:', error)
   } finally {
     isSubmitting.value = false
@@ -51,8 +46,8 @@ const handleSubmit = async () => {
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       <Input
         v-model="formData.name"
-        label="Имя *"
-        placeholder="Ваше имя"
+        :label="t('contact.form.name') + ' *'"
+        :placeholder="t('contact.form.namePlaceholder')"
         :error="errorName"
         required
       />
@@ -60,7 +55,7 @@ const handleSubmit = async () => {
       <Input
         v-model="formData.email"
         type="email"
-        label="Email *"
+        :label="t('contact.form.email') + ' *'"
         placeholder="your@email.com"
         :error="errorEmail"
         required
@@ -71,21 +66,21 @@ const handleSubmit = async () => {
       <Input
         v-model="formData.phone"
         type="tel"
-        label="Телефон"
+        :label="t('contact.form.phone')"
         placeholder="+7 (___) ___-__-__"
       />
 
       <Input
         v-model="formData.company"
-        label="Компания"
-        placeholder="Название компании"
+        :label="t('contact.form.company')"
+        :placeholder="t('contact.form.companyPlaceholder')"
       />
     </div>
 
     <Textarea
       v-model="formData.message"
-      label="Сообщение *"
-      placeholder="Расскажите о вашем проекте..."
+      :label="t('contact.form.message') + ' *'"
+      :placeholder="t('contact.form.messagePlaceholder')"
       :error="errorMessage"
       :rows="6"
       required
@@ -95,13 +90,13 @@ const handleSubmit = async () => {
       v-model="formData.agreeToTerms"
       :error="errorAgreeToTerms"
     >
-      Я согласен с
+      {{ t('contact.form.agree') }}
       <NuxtLink to="#" class="text-primary-600 hover:underline">
-        политикой конфиденциальности
+        {{ t('contact.form.privacyPolicy') }}
       </NuxtLink>
-      и
+      {{ t('contact.form.and') }}
       <NuxtLink to="#" class="text-primary-600 hover:underline">
-        условиями использования
+        {{ t('contact.form.termsOfUse') }}
       </NuxtLink>
     </Checkbox>
 
@@ -113,7 +108,7 @@ const handleSubmit = async () => {
       :disabled="!isValid || isSubmitting"
       class="w-full md:w-auto"
     >
-      {{ isSubmitting ? 'Отправка...' : 'Отправить сообщение' }}
+      {{ isSubmitting ? t('contact.form.submitting') : t('contact.form.submit') }}
     </Button>
   </form>
 </template>

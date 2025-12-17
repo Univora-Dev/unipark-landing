@@ -1,0 +1,567 @@
+{
+  "nav": {
+    "home": "Bosh sahifa",
+    "features": "Imkoniyatlar",
+    "pricing": "Tariflar",
+    "cases": "Keyslar",
+    "contact": "Aloqa"
+  },
+  "header": {
+    "contactManager": "Menejer bilan bog'lanish",
+    "login": "Kirish",
+    "getDemo": "Demo olish"
+  },
+  "common": {
+    "tryFree": "Bepul sinab ko'ring",
+    "watchDemo": "Demoni ko'rish",
+    "contactUs": "Bog'lanish",
+    "startFreeTrial": "Bepul davrni boshlash",
+    "learnMore": "Batafsil",
+    "select": "Tanlash",
+    "popular": "Ommabop",
+    "perMonth": "/oy",
+    "month": "oy",
+    "allRightsReserved": "Barcha huquqlar himoyalangan",
+    "madeWith": "Avtoturargohlarni avtomatlashtirish uchun ❤️ bilan yaratilgan"
+  },
+  "home": {
+    "hero": {
+      "title": "Avtoturargohni oson avtomatlashtirish",
+      "subtitle": "Raqamlarni tanish, moslashuvchan tariflar va real vaqtda nazorat bilan intellektual avtoturargoh boshqaruv tizimi"
+    },
+    "features": {
+      "title": "Tizim imkoniyatlari",
+      "subtitle": "Avtoturargohingizni avtomatlashtirish uchun zarur bo'lgan barcha narsa",
+      "automation": {
+        "title": "Avtomatlashtirish",
+        "description": "Kameralar orqali real vaqtda raqamlarni tanish"
+      },
+      "flexibleTariffs": {
+        "title": "Moslashuvchan tariflar",
+        "description": "Har qanday biznes uchun bir martalik, kunlik va soatlik tariflar"
+      },
+      "control247": {
+        "title": "24/7 nazorat",
+        "description": "Avtoturargohni real vaqtda monitoring va boshqarish"
+      },
+      "analytics": {
+        "title": "Tahlil",
+        "description": "Avtoturargoh yuklanishi bo'yicha batafsil hisobotlar va statistika"
+      },
+      "integrations": {
+        "title": "Integratsiyalar",
+        "description": "Tizimlaringiz bilan integratsiya uchun API"
+      },
+      "security": {
+        "title": "Xavfsizlik",
+        "description": "Ma'lumotlarni himoya qilish va rezerv nusxa"
+      }
+    },
+    "stats": {
+      "title": "UniPark raqamlarda",
+      "subtitle": "Tizimimiz har kuni minglab kirish-chiqishlarni qayta ishlaydi",
+      "profitIncrease": "Daromad o'sishi",
+      "recognitionAccuracy": "Tanish aniqligi",
+      "happyClients": "Mamnun mijozlar",
+      "lostTransactions": "Yo'qotilgan tranzaksiyalar"
+    },
+    "benefits": {
+      "title": "Biznesingiz uchun afzalliklar",
+      "subtitle": "UniPark bilan samaradorlik va daromadni oshiring",
+      "timeSaving": {
+        "title": "Vaqtni tejash",
+        "description": "Raqamlarni avtomatik tanish va qayta ishlash kirish va chiqish vaqtini 70% ga qisqartiradi",
+        "metric": "70%",
+        "metricLabel": "vaqtni tejash"
+      },
+      "profitGrowth": {
+        "title": "Daromad o'sishi",
+        "description": "Inson omilini yo'qotish va barcha to'lovlarni nazorat qilish tushumni oshiradi",
+        "metric": "+30%",
+        "metricLabel": "daromad o'sishi"
+      },
+      "fullAutomation": {
+        "title": "To'liq avtomatlashtirish",
+        "description": "Tizim xodimlarsiz 24/7 ishlaydi, operatsion xarajatlarni kamaytiradi",
+        "metric": "-50%",
+        "metricLabel": "xodimlar xarajati"
+      }
+    },
+    "testimonials": {
+      "title": "Mijozlarimiz fikrlari",
+      "subtitle": "100 dan ortiq kompaniya allaqachon UniPark dan foydalanmoqda"
+    },
+    "pricing": {
+      "title": "Tarif rejalari",
+      "subtitle": "Biznesingiz uchun mos tarifni tanlang"
+    },
+    "faq": {
+      "title": "Ko'p beriladigan savollar",
+      "subtitle": "UniPark tizimi haqida ommabop savollarga javoblar",
+      "installTime": {
+        "question": "Tizimni qanchalik tez o'rnatish mumkin?",
+        "answer": "O'rnatish va sozlash avtoturargoh hajmiga qarab 1 dan 3 kungacha davom etadi. Biz joriy etishning barcha bosqichlarida to'liq texnik yordam ko'rsatamiz."
+      },
+      "accuracy": {
+        "question": "Raqamlarni tanish aniqligi qancha?",
+        "answer": "Tizimimiz murakkab ob-havo sharoitlarida ham 98% gacha aniqlikni ta'minlaydi. Zamonaviy mashinali o'rganish algoritmlari qo'llaniladi."
+      },
+      "integration": {
+        "question": "Mavjud tizimlar bilan integratsiya qilish mumkinmi?",
+        "answer": "Ha, UniPark hisob-kitob tizimlari, CRM, 1S va boshqa platformalar bilan integratsiya uchun API taqdim etadi. Mashhur xizmatlar bilan tayyor integratsiyalar ham mavjud."
+      },
+      "offline": {
+        "question": "Internet uzilganda nima bo'ladi?",
+        "answer": "Tizim lokal rejimda ishlaydi va internetsiz ham faoliyatini davom ettiradi. Barcha ma'lumotlar aloqa tiklangandan keyin sinxronlanadi."
+      },
+      "support": {
+        "question": "Qanday qo'llab-quvvatlash taqdim etiladi?",
+        "answer": "Biz barcha tariflar bo'yicha texnik yordam ko'rsatamiz. \"Biznes\" va undan yuqori rejalar kafolatlangan javob vaqti bilan 24/7 ustuvor qo'llab-quvvatlashni o'z ichiga oladi."
+      },
+      "freeTrial": {
+        "question": "Tizimni bepul sinab ko'rish mumkinmi?",
+        "answer": "Ha, biz \"Starter\" va \"Biznes\" tariflari uchun 14 kunlik bepul sinov davrini taklif qilamiz. Karta bog'lashsiz va majburiyatsiz."
+      }
+    },
+    "cta": {
+      "title": "Boshlashga tayyormisiz?",
+      "subtitle": "UniPark ni 14 kun davomida bepul sinab ko'ring. Karta bog'lashsiz."
+    }
+  },
+  "features": {
+    "hero": {
+      "title": "UniPark imkoniyatlari",
+      "subtitle": "Avtoturargohingizni avtomatlashtirish va boshqarish uchun to'liq vositalar to'plami"
+    },
+    "main": {
+      "title": "Asosiy imkoniyatlar",
+      "subtitle": "Avtoturargohning samarali ishlashi uchun zarur bo'lgan hamma narsa",
+      "recognition": {
+        "title": "Raqamlarni tanish",
+        "description": "Kameralar orqali davlat raqamlarini 99.5% aniqlik bilan avtomatik tanish. Barcha raqam turlarini qo'llab-quvvatlash va har qanday ob-havo sharoitlarida ishlash."
+      },
+      "flexibleTariffs": {
+        "title": "Moslashuvchan tariflar",
+        "description": "Har qanday tarif rejalarini sozlang: soatlik, kunlik, abonementlar. Turli zonalar va mijoz turlari uchun turli tariflar."
+      },
+      "accessControl": {
+        "title": "Kirish nazorati",
+        "description": "Ro'yxatdan o'tgan avtomobillar uchun shlagbaumni avtomatik ochish. Oq va qora ro'yxatlar. Barcha kirish va chiqishlar tarixi."
+      },
+      "analytics": {
+        "title": "Tahlil va hisobotlar",
+        "description": "Avtoturargoh yuklanishi, tushum, mashhur soatlar bo'yicha batafsil statistika. Hisobotlarni Excel va PDF ga eksport qilish. Yuklanishni bashorat qilish."
+      },
+      "integrations": {
+        "title": "Integratsiyalar",
+        "description": "Tizimlaringiz bilan integratsiya uchun REST API. Webhook bildirishnomalari. 1S, CRM va to'lov tizimlari bilan tayyor integratsiyalar."
+      },
+      "mobileApp": {
+        "title": "Mobil ilova",
+        "description": "Avtoturargohni smartfondan boshqaring. Voqealar haqida bildirishnomalar oling. Real vaqtda statistikani tekshiring."
+      }
+    },
+    "additional": {
+      "title": "Qo'shimcha imkoniyatlar",
+      "subtitle": "Qulay ishlash uchun yana ko'proq funksiyalar",
+      "dataSecurity": {
+        "title": "Ma'lumotlar xavfsizligi",
+        "description": "Barcha ma'lumotlarni shifrlash. Muntazam rezerv nusxa. Ma'lumotlarni himoya qilish talablariga muvofiqlik."
+      },
+      "support247": {
+        "title": "24/7 texnik yordam",
+        "description": "Telefon va chat orqali kunlik yordam. Sozlash va yangilanishlarda yordam."
+      },
+      "scalability": {
+        "title": "Masshtablanish",
+        "description": "1 dan 1000+ kameragacha. Bir tizimda bir nechta avtoturargohni qo'llab-quvvatlash."
+      },
+      "updates": {
+        "title": "Yangilanishlar",
+        "description": "Yangi funksiyalar bilan muntazam yangilanishlar. To'xtavsiz avtomatik o'rnatish."
+      },
+      "notifications": {
+        "title": "Bildirishnomalar",
+        "description": "Mijozlarga Email va SMS bildirishnomalar. Administratorlarga Push-bildirishnomalar. Sozlanadigan triggerlar."
+      },
+      "multilingual": {
+        "title": "Ko'p tillilik",
+        "description": "Rus, ingliz va boshqa tillarni qo'llab-quvvatlash. Interfeys va hisobotlarni lokalizatsiya qilish."
+      }
+    },
+    "interface": {
+      "title": "Tizim interfeysi",
+      "subtitle": "Avtoturargohni to'liq nazorat qilish bilan qulay boshqaruv paneli",
+      "dashboard": "UniPark boshqaruv paneli",
+      "analytics": "Tahlil va hisobotlar",
+      "tariffs": "Tariflarni boshqarish",
+      "monitoring": "Real vaqtda monitoring"
+    },
+    "howItWorks": {
+      "title": "Bu qanday ishlaydi",
+      "subtitle": "O'rnatishdan to'liq ishlashgacha 4 oddiy qadam",
+      "step1": {
+        "title": "Kameralarni o'rnatish",
+        "description": "Avtoturargoh kirish va chiqishida kameralarni o'rnatamiz. Raqamlarni tanish uchun optimal ko'rish burchagini sozlaymiz."
+      },
+      "step2": {
+        "title": "Tariflarni sozlash",
+        "description": "Biznesingiz uchun tarif rejalarini yaratamiz. Avtoturargoh zonalari, abonementlar va maxsus takliflarni sozlaymiz."
+      },
+      "step3": {
+        "title": "Tizimni ishga tushirish",
+        "description": "Tizimni sinovdan o'tkazamiz va ishga tushiramiz. Xodimlaringizni boshqaruv paneli bilan ishlashga o'rgatamiz."
+      },
+      "step4": {
+        "title": "Monitoring",
+        "description": "Tizim ishini 24/7 kuzatamiz. Ma'lumotlarni tahlil qilamiz va maksimal samaradorlik uchun sozlamalarni optimallashtiriamiz."
+      }
+    },
+    "cta": {
+      "title": "UniPark ni sinab ko'rishga tayyormisiz?",
+      "subtitle": "14 kunga bepul kirish oling va tizimning barcha imkoniyatlarini baholang",
+      "contactExpert": "Mutaxassis bilan bog'lanish"
+    }
+  },
+  "pricing": {
+    "hero": {
+      "title": "Shaffof tariflar",
+      "subtitle": "Avtoturargoh sig'imiga asoslangan moslashuvchan SaaS tariflar"
+    },
+    "plans": {
+      "small": {
+        "name": "Small Park",
+        "description": "Kichik shahar, tuman markazlari, xususiy avtoturargohlar",
+        "capacity": "20 — 100 ta avto"
+      },
+      "medium": {
+        "name": "Medium Park",
+        "description": "Shahar ichi, savdo markazlari atrofi",
+        "capacity": "101 — 200 ta avto"
+      },
+      "large": {
+        "name": "Large Park",
+        "description": "Yirik shaharlar, bozorlar, vokzallar",
+        "capacity": "201 — 500 ta avto"
+      },
+      "mega": {
+        "name": "Mega Park",
+        "description": "Megapolis, aeroport, stadion, davlat obyektlari",
+        "capacity": "501 — 1000 ta avto"
+      }
+    },
+    "features": {
+      "cameras": "ta kamera",
+      "barriers": "ta shlagbaum",
+      "users": "ta foydalanuvchi",
+      "basicReports": "Bazaviy hisobotlar",
+      "advancedReports": "Kengaytirilgan hisobotlar",
+      "customReports": "Maxsus hisobotlar",
+      "emailSupport": "Email qo'llab-quvvatlash",
+      "emailChatSupport": "Email + Chat qo'llab-quvvatlash",
+      "support247": "24×7 qo'llab-quvvatlash",
+      "personalManager": "Shaxsiy menejer",
+      "backup7": "7 kunlik rezerv nusxa",
+      "backup14": "14 kunlik rezerv nusxa",
+      "backup30": "30 kunlik rezerv nusxa",
+      "backup90": "90 kunlik rezerv nusxa",
+      "limitedIntegration": "Cheklangan integratsiya",
+      "fullIntegration": "API va to'liq integratsiya"
+    },
+    "additionalGate": "Qo'shimcha darvoza (gate)",
+    "perMonthPrice": "so'm / oy",
+    "yearlyDiscount": "−10% (12 oy), −20% (24 oy)",
+    "individualTerms": "Individual shartlar",
+    "coefficients": {
+      "title": "Hududiy koeffitsiyentlar",
+      "subtitle": "Tariflar mijoz joylashgan hudud va transport oqimiga qarab koeffitsiyent asosida hisoblanadi",
+      "region": {
+        "title": "Hudud kategoriyalari",
+        "category": "Kategoriya",
+        "regionName": "Hudud",
+        "coefficient": "Koef.",
+        "a": "Toshkent sh., markaziy tumanlar",
+        "b": "Viloyat markazlari",
+        "c": "Tuman markazlari",
+        "d": "Qishloq, kichik aholi punkti"
+      },
+      "flow": {
+        "title": "Transport oqimi koeffitsiyenti",
+        "level": "Daraja",
+        "description": "Ta'rif",
+        "low": "Past",
+        "lowDesc": "Kam kirim-chiqim",
+        "medium": "O'rta",
+        "mediumDesc": "Kun davomida barqaror",
+        "high": "Yuqori",
+        "highDesc": "Katta navbat, yuqori tushum"
+      },
+      "formula": {
+        "title": "Yakuniy narx formulasi:",
+        "text": "Yakuniy narx = Bazaviy tarif × Hudud koef. × Oqim koef.",
+        "example": "Misol: Medium Park Toshkent markazida yuqori oqim bilan = 800 000 × 1.0 × 1.15 ="
+      }
+    },
+    "installation": {
+      "title": "Bir martalik xizmatlar",
+      "subtitle": "O'rnatish, sozlash va o'qitish xizmatlari avtoturargoh hajmiga qarab bir martalik to'lov asosida",
+      "baseConfig": "Bazaviy konfiguratsiya",
+      "advancedSetup": "Kengaytirilgan sozlash",
+      "complexIntegration": "Murakkab integratsiya",
+      "enterpriseLevel": "Enterprise darajasi",
+      "includes": {
+        "technical": {
+          "title": "Texnik ishlar",
+          "items": [
+            "Server muhitini tayyorlash (Cloud / On-premise)",
+            "Kamera va shlagbaumlarni ulash",
+            "Lokal tarmoq va internet konfiguratsiyasi"
+          ]
+        },
+        "software": {
+          "title": "Dasturiy ishlar",
+          "items": [
+            "Tariflar va hududiy koeffitsiyentlarni sozlash",
+            "Foydalanuvchi rollari va huquqlari",
+            "Hisobotlar va jurnallar"
+          ]
+        },
+        "training": {
+          "title": "O'qitish",
+          "items": [
+            "Administratorlar uchun (1 kun)",
+            "Operatorlar uchun (1 kun)",
+            "Qo'llanma va video yo'riqnomalar"
+          ]
+        }
+      }
+    },
+    "comparison": {
+      "title": "Tariflarni solishtirish",
+      "subtitle": "Avtoturargohingizga mos tarifni tanlang",
+      "function": "Funksiya",
+      "cameras": "Kamera soni",
+      "barriers": "Shlagbaum",
+      "users": "Foydalanuvchi",
+      "reports": "Hisobotlar",
+      "api": "API",
+      "integration": "Integratsiya",
+      "sla": "SLA",
+      "support": "Qo'llab-quvvatlash",
+      "backup": "Rezerv nusxa",
+      "limited": "Cheklangan",
+      "full": "To'liq",
+      "days": "kun"
+    },
+    "enterprise": {
+      "title": "Enterprise Custom",
+      "subtitle": "Davlat va yirik mijozlar uchun maxsus yechimlar",
+      "features": [
+        "SaaS + On-premise hybrid",
+        "Individual funksional va integratsiyalar",
+        "UZS / USD hisob-kitob",
+        "Davlat axborot tizimlari bilan integratsiya",
+        "Alohida SLA va shartnoma"
+      ],
+      "govObjects": "Davlat obyektlari",
+      "govDescription": "Tenderlar va davlat xaridlari uchun mos. Barqaror va shaffof narxlar.",
+      "dataSecurityGuarantee": "Ma'lumotlar xavfsizligi kafolati"
+    },
+    "faq": {
+      "title": "Ko'p beriladigan savollar",
+      "subtitle": "Tariflar va to'lov bo'yicha savollarga javoblar",
+      "items": {
+        "coefficient": {
+          "question": "Hududiy koeffitsiyent qanday hisoblanadi?",
+          "answer": "Yakuniy narx = bazaviy tarif × hudud koeffitsiyenti × oqim koeffitsiyenti. Masalan, Toshkent markazida yuqori oqimli avtoturargoh uchun: bazaviy narx × 1.0 × 1.15."
+        },
+        "additionalGate": {
+          "question": "Qo'shimcha darvoza (gate) qo'shsa narx qancha oshadi?",
+          "answer": "Har bir qo'shimcha darvoza uchun +300 000 so'm/oy to'lanadi. Qo'shimcha avtoturargoh obyekti esa alohida tariflanadi."
+        },
+        "yearlyDiscount": {
+          "question": "Yillik to'lovda qanday chegirma bor?",
+          "answer": "12 oylik to'lovda −10% chegirma, 24 oylik to'lovda −20% chegirma beriladi. Mega Park uchun individual shartlar muhokama qilinadi."
+        },
+        "government": {
+          "question": "Davlat tashkilotlari uchun alohida shartlar bormi?",
+          "answer": "Ha, davlat va yirik mijozlar uchun Enterprise Custom tarif mavjud: SaaS + On-premise hybrid, individual funksional, UZS/USD hisob-kitob, davlat axborot tizimlari bilan integratsiya, alohida SLA va shartnoma."
+        },
+        "installation": {
+          "question": "O'rnatish xizmati nimani o'z ichiga oladi?",
+          "answer": "Bir martalik o'rnatish xizmati: server va tarmoq sozlash, kamera va shlagbaumlarni ulash, tariflar va rollar konfiguratsiyasi, administrator va operatorlarni o'qitish, qo'llanma va video yo'riqnomalar."
+        },
+        "roi": {
+          "question": "Tizim o'zini qancha vaqtda qoplaydi?",
+          "answer": "Misol: Large Park — bir martalik 8 000 000 so'm + 12 oylik SaaS ≈ 19 200 000 so'm. Jami 1 yillik xarajat ≈ 27.2 mln so'm. Amaliyotda to'lov intizomi va shaffof nazorat orqali 6—9 oyda o'zini qoplaydi."
+        }
+      }
+    },
+    "cta": {
+      "title": "Bepul konsultatsiya oling",
+      "subtitle": "Avtoturargohingizga mos tarifni tanlashda yordam beramiz",
+      "askQuestion": "Savol berish"
+    }
+  },
+  "cases": {
+    "hero": {
+      "title": "Muvaffaqiyat hikoyalari",
+      "subtitle": "UniPark biznesga avtoturargohlarni avtomatlashtirish va daromadni oshirishda qanday yordam berishini bilib oling"
+    },
+    "implementations": {
+      "title": "Real joriy etishlar",
+      "subtitle": "UniPark mijozlarimizda qanday ishlashini ko'ring",
+      "shoppingCenter": "Savdo markazida joriy etish",
+      "businessCenter": "Biznes markazida tizim",
+      "analyticsPanel": "Tahlil paneli"
+    },
+    "stats": {
+      "title": "UniPark raqamlarda",
+      "subtitle": "Mijozlarimiz ishining natijalari",
+      "happyClients": "Mamnun mijozlar",
+      "carsPerDay": "Kuniga avtomobillar",
+      "recognitionAccuracy": "Tanish aniqligi",
+      "support": "Texnik yordam"
+    },
+    "testimonials": {
+      "title": "Mijozlar fikrlari",
+      "subtitle": "Mijozlarimiz biz haqimizda nima deyishadi"
+    },
+    "industries": {
+      "shoppingCenter": "Savdo markazi",
+      "businessCenter": "Biznes markazi",
+      "airport": "Aeroport",
+      "residential": "Turar joy majmuasi",
+      "hotel": "Mehmonxona biznesi",
+      "medical": "Tibbiyot"
+    },
+    "cta": {
+      "title": "Keyingi muvaffaqiyat hikoyasi bo'ling",
+      "subtitle": "UniPark ga ishongan 150+ kompaniyaga qo'shiling",
+      "orderConsultation": "Konsultatsiya buyurtma qilish"
+    }
+  },
+  "contact": {
+    "hero": {
+      "title": "Biz bilan bog'laning",
+      "subtitle": "Barcha savollaringizga javob beramiz va biznesingiz uchun optimal yechimni tanlashga yordam beramiz"
+    },
+    "info": {
+      "email": {
+        "title": "Email",
+        "description": "1 soat ichida javob beramiz"
+      },
+      "phone": {
+        "title": "Telefon",
+        "description": "Dush-Jum 9:00 dan 18:00 gacha"
+      },
+      "telegram": {
+        "title": "Telegram",
+        "description": "24/7 tez javoblar"
+      },
+      "office": {
+        "title": "Ofis",
+        "description": "Oldindan yozilish orqali"
+      }
+    },
+    "form": {
+      "title": "Bizga xabar yuboring",
+      "subtitle": "Quyidagi shaklni to'ldiring va biz tez orada siz bilan bog'lanamiz",
+      "name": "Ism",
+      "namePlaceholder": "Ismingiz",
+      "email": "Email",
+      "phone": "Telefon",
+      "company": "Kompaniya",
+      "companyPlaceholder": "Kompaniya nomi",
+      "message": "Xabar",
+      "messagePlaceholder": "Loyihangiz haqida aytib bering...",
+      "agree": "Men",
+      "privacyPolicy": "konfidensiallik siyosati",
+      "and": "va",
+      "termsOfUse": "foydalanish shartlari",
+      "agreeEnd": "ga roziman",
+      "submit": "Xabar yuborish",
+      "submitting": "Yuborilmoqda..."
+    },
+    "workingHours": {
+      "title": "Ish soatlari",
+      "mondayFriday": "Dushanba - Juma",
+      "saturday": "Shanba",
+      "sunday": "Yakshanba",
+      "closed": "Dam olish kuni"
+    },
+    "quickLinks": {
+      "title": "Foydali havolalar",
+      "knowledgeBase": "Bilimlar bazasi",
+      "apiDocs": "API hujjatlari",
+      "videoTutorials": "Video darslar",
+      "supportForum": "Qo'llab-quvvatlash forumi"
+    },
+    "social": {
+      "title": "Biz ijtimoiy tarmoqlarda"
+    },
+    "map": {
+      "title": "Biz xaritada",
+      "placeholder": "Bu yerda ofis joylashuvi xaritasi bo'ladi"
+    },
+    "cta": {
+      "title": "Jonli muloqotni afzal ko'rasizmi?",
+      "subtitle": "Mutaxassisimiz bilan tizimning onlayn namoyishiga yoziling",
+      "bookDemo": "Demoga yozilish",
+      "askQuestion": "Savol berish"
+    }
+  },
+  "footer": {
+    "description": "Raqamlarni tanish va jarayonlarni avtomatlashtirish bilan intellektual avtoturargoh boshqaruv tizimi.",
+    "sections": {
+      "product": "Mahsulot",
+      "company": "Kompaniya",
+      "support": "Qo'llab-quvvatlash",
+      "legal": "Huquqiy ma'lumot"
+    },
+    "links": {
+      "features": "Imkoniyatlar",
+      "pricing": "Tariflar",
+      "cases": "Keyslar",
+      "documentation": "Hujjatlar",
+      "aboutUs": "Biz haqimizda",
+      "blog": "Blog",
+      "careers": "Karyera",
+      "contacts": "Aloqa",
+      "help": "Yordam",
+      "faq": "FAQ",
+      "techSupport": "Texnik yordam",
+      "api": "API",
+      "privacyPolicy": "Konfidensiallik siyosati",
+      "termsOfUse": "Foydalanish shartlari",
+      "publicOffer": "Ommaviy oferta"
+    }
+  },
+  "seo": {
+    "home": {
+      "title": "UniPark - Avtoturargohni oson avtomatlashtirish",
+      "description": "Raqamlarni tanish, moslashuvchan tariflar va real vaqtda nazorat bilan intellektual avtoturargoh boshqaruv tizimi",
+      "keywords": "avtoturargoh boshqaruv tizimi, avtoturargohni avtomatlashtirish, raqamlarni tanish"
+    },
+    "features": {
+      "title": "UniPark imkoniyatlari - Intellektual avtoturargoh boshqaruv tizimi",
+      "description": "Avtomatik raqamlarni tanish, moslashuvchan tariflar, tahlil va integratsiyalar - avtoturargohni samarali boshqarish uchun hamma narsa",
+      "keywords": "avtoturargoh tizimi imkoniyatlari, raqamlarni tanish, avtoturargohni boshqarish, avtomatlashtirish"
+    },
+    "pricing": {
+      "title": "Tariflar - UniPark avtoturargoh boshqaruv tizimi",
+      "description": "UniPark SaaS tariflari. Avtoturargoh sig'imiga asoslangan shaffof narxlar. Small Park dan Mega Park gacha.",
+      "keywords": "unipark tariflar, avtoturargoh tizimi narxlari, parking system pricing"
+    },
+    "cases": {
+      "title": "Keyslar UniPark - Mijozlarimizning muvaffaqiyat hikoyalari",
+      "description": "UniPark ni joriy etishning real misollari. Tushumni oshirish, jarayonlarni avtomatlashtirish va mamnun mijozlar.",
+      "keywords": "avtoturargoh keyslari, joriy etish misollari, mijozlar fikrlari, muvaffaqiyat hikoyalari"
+    },
+    "contact": {
+      "title": "Aloqa UniPark - Biz bilan bog'laning",
+      "description": "Savollaringiz bormi? Biz bilan qulay usulda bog'laning. 15 daqiqa ichida javob beramiz.",
+      "keywords": "unipark aloqa, biz bilan bog'lanish, texnik yordam, konsultatsiya"
+    }
+  }
+}

@@ -1,4 +1,7 @@
 <script setup lang="ts">
+const { t } = useI18n()
+const localePath = useLocalePath()
+
 const props = defineProps<{
   modelValue: boolean
 }>()
@@ -9,20 +12,21 @@ const emit = defineEmits<{
 
 const route = useRoute()
 
-const navItems = [
-  { name: 'Главная', path: '/', icon: 'lucide:home' },
-  { name: 'Возможности', path: '/features', icon: 'lucide:sparkles' },
-  { name: 'Тарифы', path: '/pricing', icon: 'lucide:credit-card' },
-  { name: 'Кейсы', path: '/cases', icon: 'lucide:briefcase' },
-  { name: 'Контакты', path: '/contact', icon: 'lucide:mail' }
-]
+const navItems = computed(() => [
+  { name: t('nav.home'), path: '/', icon: 'lucide:home' },
+  { name: t('nav.features'), path: '/features', icon: 'lucide:sparkles' },
+  { name: t('nav.pricing'), path: '/pricing', icon: 'lucide:credit-card' },
+  { name: t('nav.contact'), path: '/contact', icon: 'lucide:mail' }
+])
 
 const close = () => {
   emit('update:modelValue', false)
 }
 
 const isActive = (path: string) => {
-  return route.path === path
+  const currentPath = route.path
+  const localizedPath = localePath(path)
+  return currentPath === localizedPath || currentPath === path
 }
 
 // Close on route change
@@ -95,7 +99,7 @@ onUnmounted(() => {
               <NuxtLink
                 v-for="item in navItems"
                 :key="item.path"
-                :to="item.path"
+                :to="localePath(item.path)"
                 :class="[
                   'flex items-center gap-3 px-4 py-3 rounded-lg transition-all',
                   {
@@ -109,6 +113,11 @@ onUnmounted(() => {
               </NuxtLink>
             </nav>
 
+            <!-- Language Switcher -->
+            <div class="px-6 py-4 border-t border-dark-200">
+              <LanguageSwitcher />
+            </div>
+
             <!-- CTA Button -->
             <div class="p-6 border-t border-dark-200">
               <Button
@@ -117,7 +126,7 @@ onUnmounted(() => {
                 icon="lucide:rocket"
                 class="w-full"
               >
-                Попробовать бесплатно
+                {{ t('common.tryFree') }}
               </Button>
             </div>
           </div>

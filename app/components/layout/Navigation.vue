@@ -1,16 +1,19 @@
 <script setup lang="ts">
+const { t } = useI18n()
 const route = useRoute()
+const localePath = useLocalePath()
 
-const navItems = [
-  { name: 'Главная', path: '/' },
-  { name: 'Возможности', path: '/features' },
-  { name: 'Тарифы', path: '/pricing' },
-  { name: 'Кейсы', path: '/cases' },
-  { name: 'Контакты', path: '/contact' }
-]
+const navItems = computed(() => [
+  { name: t('nav.home'), path: '/' },
+  { name: t('nav.features'), path: '/features' },
+  { name: t('nav.pricing'), path: '/pricing' },
+  { name: t('nav.contact'), path: '/contact' }
+])
 
 const isActive = (path: string) => {
-  return route.path === path
+  const currentPath = route.path
+  const localizedPath = localePath(path)
+  return currentPath === localizedPath || currentPath === path
 }
 </script>
 
@@ -19,7 +22,7 @@ const isActive = (path: string) => {
     <NuxtLink
       v-for="item in navItems"
       :key="item.path"
-      :to="item.path"
+      :to="localePath(item.path)"
       :class="[
         'text-sm font-medium transition-colors relative py-2',
         {
