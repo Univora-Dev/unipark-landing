@@ -2,6 +2,8 @@
 import type { Feature } from '~/types'
 
 const { t } = useI18n()
+const { open: openContactModal } = useContactModal()
+
 
 definePageMeta({
   layout: 'default'
@@ -243,6 +245,8 @@ const timeline = computed(() => [
       :button-text="t('common.startFreeTrial')"
       :secondary-button-text="t('features.cta.contactExpert')"
       secondary-button-icon="lucide:message-circle"
+      @button-click="openContactModal"
+      @secondary-click="openContactModal"
     />
   </div>
 </template>

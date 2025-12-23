@@ -13,6 +13,11 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n'
   ],
 
+  runtimeConfig: {
+    telegramBotToken: process.env.TELEGRAM_BOT_TOKEN,
+    telegramChatId: process.env.TELEGRAM_CHAT_ID
+  },
+
   // i18n configuration
   i18n: {
     locales: [

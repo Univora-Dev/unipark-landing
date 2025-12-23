@@ -22,7 +22,226 @@
     "perMonth": "/month",
     "month": "month",
     "allRightsReserved": "All rights reserved",
-    "madeWith": "Made with ❤️ for parking automation"
+    "madeWith": "Made with ❤️ for parking automation",
+    "back_to_home": "Back to Home"
+  },
+  "pages": {
+    "public_offer": {
+      "title": "Public Offer",
+      "subtitle": "SaaS Service Agreement",
+      "seo": {
+        "title": "Public Offer - UniPark",
+        "description": "Public offer terms for using UniPark service"
+      },
+      "sections": [
+        {
+          "title": "1. General Provisions",
+          "content": "This Offer defines the terms of providing UniPark SaaS services. The Client is considered to have agreed to the terms of the Offer from the moment of payment."
+        },
+        {
+          "title": "2. The Performer",
+          "content": "LLC “RealSoft Akademy”, under the brand “Univora”."
+        },
+        {
+          "title": "3. Service Content",
+          "list": [
+            "Digital parking management",
+            "Payment and tariff module",
+            "ANPR, QR, RFID integration",
+            "Analytics and reports",
+            "Technical support"
+          ]
+        },
+        {
+          "title": "4. Tariffs and Payment",
+          "list": [
+            "Small / Medium / Large / Mega Park tariffs",
+            "Prices linked to BRV",
+            "One-time installation service",
+            "Discount for annual payment"
+          ]
+        },
+        {
+          "title": "5. SLA (Service Level Agreement)",
+          "list": [
+            "Uptime: 99.5–99.9%",
+            "Response time: 1–24 hours",
+            "Support channels: Email, Telegram, tickets"
+          ]
+        },
+        {
+          "title": "6. Client Responsibilities",
+          "list": [
+            "Correct equipment installation",
+            "Providing internet connection",
+            "Timely payment"
+          ]
+        },
+        {
+          "title": "7. Service Restrictions",
+          "list": [
+            "5 days — warning",
+            "10 days — restricted mode",
+            "30 days — temporary block"
+          ]
+        },
+        {
+          "title": "8. Liability",
+          "list": [
+            "The Performer is not liable for lost profit due to system downtime",
+            "The Client is responsible for the equipment"
+          ]
+        },
+        {
+          "title": "9. Acceptance of Offer",
+          "list": [
+            "Upon payment",
+            "Upon account creation"
+          ]
+        }
+      ]
+    },
+    "privacy_policy": {
+      "title": "Privacy Policy",
+      "subtitle": "For UniPark website, mobile app, and SaaS platform",
+      "seo": {
+        "title": "Privacy Policy - UniPark",
+        "description": "Privacy policy and data protection rules when using UniPark service"
+      },
+      "sections": [
+        {
+          "title": "1. General Provisions",
+          "content": "This Policy defines the procedure for collecting, processing, and storing personal data of UniPark users."
+        },
+        {
+          "title": "2. Collected Data",
+          "subsections": [
+            {
+              "title": "2.1. User Data",
+              "list": [
+                "Name, surname",
+                "Phone number",
+                "Car number",
+                "Payment data (via payment providers)",
+                "Geolocation (optional)"
+              ]
+            },
+            {
+              "title": "2.2. Technical Data",
+              "list": [
+                "IP address",
+                "Device type",
+                "Browser data",
+                "Cookies"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "3. Data Usage Purposes",
+          "list": [
+            "Login and authentication",
+            "Automation of entry/exit to parking",
+            "Processing payments",
+            "Improving service quality",
+            "Analytics and statistics"
+          ]
+        },
+        {
+          "title": "4. Data Transfer to Third Parties",
+          "content": "Data may be transferred in the following cases:",
+          "list": [
+            "To payment providers (Click, Payme, Uzum)",
+            "As required by law",
+            "With client's consent"
+          ]
+        },
+        {
+          "title": "5. Data Retention Period",
+          "list": [
+            "During the period of user account activity",
+            "12 months after service termination (for logs and reports)"
+          ]
+        },
+        {
+          "title": "6. User Rights",
+          "list": [
+            "View data",
+            "Edit",
+            "Delete",
+            "Unsubscribe"
+          ]
+        },
+        {
+          "title": "7. Security Measures",
+          "list": [
+            "SSL encryption",
+            "Backups",
+            "Access system (RBAC)",
+            "Audit logs"
+          ]
+        }
+      ]
+    },
+    "terms_of_use": {
+      "title": "Terms of Use",
+      "subtitle": "Terms of Use",
+      "seo": {
+        "title": "Terms of Use - UniPark",
+        "description": "Rules and terms of using the UniPark system"
+      },
+      "sections": [
+        {
+          "title": "1. General Provisions",
+          "content": "This document defines the terms of using the UniPark service. The user agrees to these terms from the moment of registration on the website or in the mobile app."
+        },
+        {
+          "title": "2. Service Description",
+          "content": "UniPark is a SaaS platform designed for digital parking management."
+        },
+        {
+          "title": "3. User Responsibilities",
+          "list": [
+            "Providing accurate information",
+            "Not using the system for illegal purposes",
+            "Careful attitude to equipment (cameras, barriers)",
+            "Maintaining confidentiality of login and password"
+          ]
+        },
+        {
+          "title": "4. Performer Responsibilities",
+          "list": [
+            "Ensuring stable system operation",
+            "Technical support",
+            "Data protection"
+          ]
+        },
+        {
+          "title": "5. Payments and Subscription",
+          "list": [
+            "Monthly / annual subscription",
+            "Separate fee for additional modules",
+            "Possibility of service restriction in case of payment delay"
+          ]
+        },
+        {
+          "title": "6. Liability Limitations",
+          "list": [
+            "No liability for internet connection problems",
+            "No liability for third-party equipment",
+            "Exclusion of force majeure circumstances"
+          ]
+        },
+        {
+          "title": "7. Service Termination",
+          "list": [
+            "At client's request",
+            "In case of payment delay",
+            "In case of rule violation"
+          ]
+        }
+      ]
+    }
   },
   "home": {
     "hero": {
@@ -434,6 +653,18 @@
     }
   },
   "contact": {
+    "modal": {
+      "title": "Contact Us",
+      "nameLabel": "Name and Surname",
+      "namePlaceholder": "Enter your name",
+      "phoneLabel": "Phone Number",
+      "messageLabel": "Message / Comment",
+      "messagePlaceholder": "Write your question or comment",
+      "submitButton": "Send Request",
+      "submitting": "Sending...",
+      "successMessage": "Your request has been received. We will contact you shortly.",
+      "errorMessage": "Failed to send request. Please try again later."
+    },
     "hero": {
       "title": "Contact Us",
       "subtitle": "We'll answer all your questions and help you find the optimal solution for your business"

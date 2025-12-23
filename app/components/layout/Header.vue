@@ -69,7 +69,7 @@ onUnmounted(() => {
 
           <!-- CTA Button (Desktop) -->
           <div class="hidden md:flex items-center">
-            <Button variant="primary" size="md">
+            <Button variant="primary" size="md" @click="useContactModal().open()">
               {{ t('header.getDemo') }}
             </Button>
           </div>

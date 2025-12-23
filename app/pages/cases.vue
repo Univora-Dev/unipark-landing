@@ -2,6 +2,8 @@
 import type { CaseStudy, Testimonial } from '~/types'
 
 const { t } = useI18n()
+const { open: openContactModal } = useContactModal()
+
 
 definePageMeta({
   layout: 'default'
@@ -246,6 +248,8 @@ const stats = computed(() => [
       :button-text="t('common.startFreeTrial')"
       :secondary-button-text="t('cases.cta.orderConsultation')"
       secondary-button-icon="lucide:calendar"
+      @button-click="openContactModal"
+      @secondary-click="openContactModal"
     />
   </div>
 </template>

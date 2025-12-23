@@ -5,5 +5,6 @@
 			<slot />
 		</main>
 		<Footer />
+		<ContactModal />
 	</div>
 </template>

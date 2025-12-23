@@ -2,6 +2,8 @@
 import type { ContactFormData } from '~/types'
 
 const { t } = useI18n()
+const { open: openContactModal } = useContactModal()
+
 
 definePageMeta({
   layout: 'default'
@@ -252,6 +254,8 @@ const workingHours = computed(() => [
       button-icon="lucide:video"
       :secondary-button-text="t('contact.cta.askQuestion')"
       secondary-button-icon="lucide:message-circle"
+      @button-click="openContactModal"
+      @secondary-click="openContactModal"
     />
   </div>
 </template>

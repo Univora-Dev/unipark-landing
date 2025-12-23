@@ -2,6 +2,8 @@
 import type { PricingPlan, FAQItem } from '~/types';
 
 const { t } = useI18n();
+const { open: openContactModal } = useContactModal();
+
 
 definePageMeta({
 	layout: 'default',
@@ -252,6 +254,7 @@ const faqItems = computed<FAQItem[]>(() => [
 									:variant="plan.popular ? 'primary' : 'outline'"
 									size="md"
 									class="w-full mb-6"
+									@click="openContactModal"
 								>
 									{{ plan.buttonText }}
 								</Button>
@@ -576,7 +579,7 @@ const faqItems = computed<FAQItem[]>(() => [
 										<span>{{ feature }}</span>
 									</li>
 								</ul>
-								<Button variant="accent" size="lg">
+								<Button variant="accent" size="lg" @click="openContactModal">
 									{{ t('common.contactUs') }}
 									<Icon name="lucide:arrow-right" class="w-5 h-5 ml-2" />
 								</Button>
@@ -636,6 +639,8 @@ const faqItems = computed<FAQItem[]>(() => [
 			:button-text="t('common.contactUs')"
 			:secondary-button-text="t('pricing.cta.askQuestion')"
 			secondary-button-icon="lucide:help-circle"
+			@button-click="openContactModal"
+			@secondary-click="openContactModal"
 		/>
 	</div>
 </template>

@@ -6,6 +6,8 @@ import type { PricingPlan } from '~/components/sections/PricingSection.vue'
 import type { FAQItem } from '~/components/sections/FAQSection.vue'
 
 const { t } = useI18n()
+const { open: openContactModal } = useContactModal()
+
 
 definePageMeta({
   layout: 'default'
@@ -200,6 +202,7 @@ const faqItems = computed<FAQItem[]>(() => [
         '/images/screenshots/3.jpg',
         '/images/screenshots/4.jpg'
       ]"
+      @primary-click="openContactModal"
     />
 
     <!-- Features Section -->
@@ -235,6 +238,7 @@ const faqItems = computed<FAQItem[]>(() => [
       :title="t('home.pricing.title')"
       :subtitle="t('home.pricing.subtitle')"
       :plans="pricingPlans"
+      @select="openContactModal"
     />
 
     <!-- FAQ Section -->
@@ -251,6 +255,8 @@ const faqItems = computed<FAQItem[]>(() => [
       :button-text="t('common.startFreeTrial')"
       :secondary-button-text="t('common.contactUs')"
       secondary-button-icon="lucide:mail"
+      @button-click="openContactModal"
+      @secondary-click="openContactModal"
     />
   </div>
 </template>

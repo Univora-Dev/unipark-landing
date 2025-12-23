@@ -22,7 +22,226 @@
     "perMonth": "/oy",
     "month": "oy",
     "allRightsReserved": "Barcha huquqlar himoyalangan",
-    "madeWith": "Avtoturargohlarni avtomatlashtirish uchun ❤️ bilan yaratilgan"
+    "madeWith": "Avtoturargohlarni avtomatlashtirish uchun ❤️ bilan yaratilgan",
+    "back_to_home": "Bosh sahifaga qaytish"
+  },
+  "pages": {
+    "privacy_policy": {
+      "title": "Maxfiylik siyosati",
+      "subtitle": "UniPark veb-sayti, mobil ilovasi va SaaS platformasi uchun",
+      "seo": {
+        "title": "Maxfiylik siyosati - UniPark",
+        "description": "UniPark xizmatidan foydalanishda maxfiylik siyosati va ma'lumotlarni himoya qilish qoidalari"
+      },
+      "sections": [
+        {
+          "title": "1. Umumiy qoidalar",
+          "content": "Ushbu Politika UniPark foydalanuvchilarining shaxsiy ma'lumotlarini yig'ish, qayta ishlash va saqlash tartibini belgilaydi."
+        },
+        {
+          "title": "2. Yig'iladigan ma'lumotlar",
+          "subsections": [
+            {
+              "title": "2.1. Foydalanuvchi ma'lumotlari",
+              "list": [
+                "Ism, familiya",
+                "Telefon raqami",
+                "Avtomobil raqami",
+                "To'lov ma'lumotlari (to'lov provayderlari orqali)",
+                "Geolokatsiya (ixtiyoriy)"
+              ]
+            },
+            {
+              "title": "2.2. Texnik ma'lumotlar",
+              "list": [
+                "IP manzil",
+                "Qurilma turi",
+                "Brauzer ma'lumotlari",
+                "Cookie fayllar"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "3. Ma'lumotlardan foydalanish maqsadlari",
+          "list": [
+            "Tizimga kirish va autentifikatsiya",
+            "Avtoturargohga kirish-chiqishni avtomatlashtirish",
+            "To'lovlarni amalga oshirish",
+            "Xizmat sifatini oshirish",
+            "Analitika va statistika"
+          ]
+        },
+        {
+          "title": "4. Ma'lumotlarni uchinchi tomonlarga berish",
+          "content": "Ma'lumotlar quyidagi hollarda berilishi mumkin:",
+          "list": [
+            "To'lov provayderlariga (Click, Payme, Uzum)",
+            "Qonunchilik talab qilganda",
+            "Mijoz roziligi bilan"
+          ]
+        },
+        {
+          "title": "5. Ma'lumotlarni saqlash muddati",
+          "list": [
+            "Foydalanuvchi akkaunti faol bo'lgan davrda",
+            "Xizmatdan chiqqandan keyin 12 oy (loglar va hisobotlar uchun)"
+          ]
+        },
+        {
+          "title": "6. Foydalanuvchi huquqlari",
+          "list": [
+            "Ma'lumotlarni ko'rish",
+            "Tahrirlash",
+            "O'chirish",
+            "Obunani bekor qilish"
+          ]
+        },
+        {
+          "title": "7. Xavfsizlik choralari",
+          "list": [
+            "SSL shifrlash",
+            "Rezerv nusxa",
+            "Ruxsatlar tizimi (RBAC)",
+            "Audit jurnallari"
+          ]
+        }
+      ]
+    },
+    "public_offer": {
+      "title": "Ommaviy oferta",
+      "subtitle": "SaaS xizmat ko'rsatish shartnomasi",
+      "seo": {
+        "title": "Ommaviy oferta - UniPark",
+        "description": "UniPark xizmatlaridan foydalanish bo'yicha ommaviy oferta shartlari"
+      },
+      "sections": [
+        {
+          "title": "1. Umumiy qoidalar",
+          "content": "Ushbu Oferta UniPark SaaS xizmatlarini taqdim etish shartlarini belgilaydi. Mijoz to'lov amalga oshirgan paytdan boshlab Oferta shartlariga rozi hisoblanadi."
+        },
+        {
+          "title": "2. Xizmat ko'rsatuvchi",
+          "content": "“RealSoft Akademy” MChJ, “Univora” brendi ostida."
+        },
+        {
+          "title": "3. Xizmat mazmuni",
+          "list": [
+            "Avtoturargohlarni raqamli boshqarish",
+            "To'lov va tariflar moduli",
+            "ANPR, QR, RFID integratsiya",
+            "Analitika va hisobotlar",
+            "Texnik qo'llab-quvvatlash"
+          ]
+        },
+        {
+          "title": "4. Tariflar va to'lovlar",
+          "list": [
+            "Small / Medium / Large / Mega Park tariflari",
+            "BHMga bog'langan narxlar",
+            "Bir martalik o'rnatish xizmati",
+            "Yillik to'lovda chegirma"
+          ]
+        },
+        {
+          "title": "5. SLA (Xizmat darajasi)",
+          "list": [
+            "Uptime: 99.5–99.9%",
+            "Reaksiya vaqti: 1–24 soat",
+            "Qo'llab-quvvatlash kanallari: Email, Telegram, tiket"
+          ]
+        },
+        {
+          "title": "6. Mijoz majburiyatlari",
+          "list": [
+            "Uskunalarni to'g'ri o'rnatish",
+            "Internetni ta'minlash",
+            "To'lovlarni o'z vaqtida amalga oshirish"
+          ]
+        },
+        {
+          "title": "7. Xizmatni cheklash",
+          "list": [
+            "5 kun — ogohlantirish",
+            "10 kun — cheklangan rejim",
+            "30 kun — vaqtinchalik blok"
+          ]
+        },
+        {
+          "title": "8. Javobgarlik",
+          "list": [
+            "Tizim ishlamasligi sababli yo'qotilgan daromad uchun javobgarlik yuklanmaydi",
+            "Uskunalar uchun mijoz javobgar"
+          ]
+        },
+        {
+          "title": "9. Oferta qabul qilinishi",
+          "list": [
+            "To'lov amalga oshirilganda",
+            "Akkaunt yaratilganda"
+          ]
+        }
+      ]
+    },
+    "terms_of_use": {
+      "title": "Foydalanish shartlari",
+      "subtitle": "Terms of Use",
+      "seo": {
+        "title": "Foydalanish shartlari - UniPark",
+        "description": "UniPark tizimidan foydalanish qoidalari va shartlari"
+      },
+      "sections": [
+        {
+          "title": "1. Umumiy qoidalar",
+          "content": "Ushbu hujjat UniPark xizmatidan foydalanish shartlarini belgilaydi. Foydalanuvchi sayt yoki mobil ilova orqali ro'yxatdan o'tgan paytdan boshlab ushbu shartlarga rozi bo'ladi."
+        },
+        {
+          "title": "2. Xizmat tavsifi",
+          "content": "UniPark — avtoturargohlarni raqamli boshqarish uchun mo'ljallangan SaaS platforma."
+        },
+        {
+          "title": "3. Foydalanuvchi majburiyatlari",
+          "list": [
+            "To'g'ri ma'lumot kiritish",
+            "Tizimdan qonunga zid maqsadlarda foydalanmaslik",
+            "Uskunalarga (kamera, shlagbaum) zarar yetkazmaslik",
+            "Login va parolni maxfiy saqlash"
+          ]
+        },
+        {
+          "title": "4. Xizmat ko'rsatuvchi majburiyatlari",
+          "list": [
+            "Tizimning barqaror ishlashini ta'minlash",
+            "Texnik qo'llab-quvvatlash",
+            "Ma'lumotlarni muhofaza qilish"
+          ]
+        },
+        {
+          "title": "5. To'lovlar va obuna",
+          "list": [
+            "Oylik / yillik obuna",
+            "Qo'shimcha modullar uchun alohida to'lov",
+            "To'lov kechiktirilganda xizmat cheklanishi mumkin"
+          ]
+        },
+        {
+          "title": "6. Javobgarlik cheklovlari",
+          "list": [
+            "Internet muammolari uchun javobgarlik yo'q",
+            "Uchinchi tomon uskunalari uchun javobgarlik yo'q",
+            "Fors-major holatlar istisno qilinadi"
+          ]
+        },
+        {
+          "title": "7. Xizmatni to'xtatish",
+          "list": [
+            "Mijoz istagiga ko'ra",
+            "To'lov kechiktirilganda",
+            "Qoidalar buzilganda"
+          ]
+        }
+      ]
+    }
   },
   "home": {
     "hero": {
@@ -434,6 +653,18 @@
     }
   },
   "contact": {
+    "modal": {
+      "title": "Biz bilan bog'lanish",
+      "nameLabel": "Ism va familiya",
+      "namePlaceholder": "Ismingizni kiriting",
+      "phoneLabel": "Telefon raqami",
+      "messageLabel": "Xabar / Izoh",
+      "messagePlaceholder": "Savol yoki izohingizni yozing",
+      "submitButton": "So'rov yuborish",
+      "submitting": "Yuborilmoqda...",
+      "successMessage": "Sizning so'rovingiz qabul qilindi. Tez orada siz bilan bog'lanamiz.",
+      "errorMessage": "So'rovni yuborib bo'lmadi. Iltimos, keyinroq urinib ko'ring."
+    },
     "hero": {
       "title": "Biz bilan bog'laning",
       "subtitle": "Barcha savollaringizga javob beramiz va biznesingiz uchun optimal yechimni tanlashga yordam beramiz"

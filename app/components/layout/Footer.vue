@@ -23,9 +23,9 @@ const footerLinks = computed(() => ({
 		{ name: t('footer.links.api'), path: '#' },
 	],
 	legal: [
-		{ name: t('footer.links.privacyPolicy'), path: '#' },
-		{ name: t('footer.links.termsOfUse'), path: '#' },
-		{ name: t('footer.links.publicOffer'), path: '#' },
+		{ name: t('footer.links.privacyPolicy'), path: '/privacy-policy' },
+		{ name: t('footer.links.termsOfUse'), path: '/terms-of-use' },
+		{ name: t('footer.links.publicOffer'), path: '/public-offer' },
 	],
 }));
 

@@ -15,6 +15,10 @@ defineProps<{
   subtitle?: string
   plans: PricingPlan[]
 }>()
+
+const emit = defineEmits<{
+  'select': [plan: PricingPlan]
+}>()
 </script>
 
 <template>
@@ -78,6 +82,7 @@ defineProps<{
               size="lg"
               icon="lucide:arrow-right"
               class="w-full mb-6"
+              @click="emit('select', plan)"
             >
               {{ plan.buttonText || 'Начать' }}
             </Button>
