@@ -234,12 +234,12 @@ const faqItems = computed<FAQItem[]>(() => [
     />
 
     <!-- Pricing Section -->
-    <PricingSection
+    <!-- <PricingSection
       :title="t('home.pricing.title')"
       :subtitle="t('home.pricing.subtitle')"
       :plans="pricingPlans"
       @select="openContactModal"
-    />
+    /> -->
 
     <!-- FAQ Section -->
     <FAQSection
