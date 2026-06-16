@@ -7,7 +7,7 @@ const currentYear = new Date().getFullYear();
 const footerLinks = computed(() => ({
 	product: [
 		{ name: t('footer.links.features'), path: '/features' },
-		{ name: t('footer.links.pricing'), path: '/pricing' },
+		// { name: t('footer.links.pricing'), path: '/pricing' },
 		{ name: t('footer.links.documentation'), path: '#' },
 	],
 	company: [

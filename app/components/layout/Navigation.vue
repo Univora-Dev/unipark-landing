@@ -6,7 +6,7 @@ const localePath = useLocalePath()
 const navItems = computed(() => [
   { name: t('nav.home'), path: '/' },
   { name: t('nav.features'), path: '/features' },
-  { name: t('nav.pricing'), path: '/pricing' },
+  // { name: t('nav.pricing'), path: '/pricing' },
   { name: t('nav.contact'), path: '/contact' }
 ])
 

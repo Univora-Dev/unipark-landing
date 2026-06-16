@@ -15,7 +15,7 @@ const route = useRoute()
 const navItems = computed(() => [
   { name: t('nav.home'), path: '/', icon: 'lucide:home' },
   { name: t('nav.features'), path: '/features', icon: 'lucide:sparkles' },
-  { name: t('nav.pricing'), path: '/pricing', icon: 'lucide:credit-card' },
+  // { name: t('nav.pricing'), path: '/pricing', icon: 'lucide:credit-card' },
   { name: t('nav.contact'), path: '/contact', icon: 'lucide:mail' }
 ])
 
