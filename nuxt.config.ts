@@ -1,4 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import { localizedSeoPaths } from './seo-routes'
+
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
@@ -50,7 +52,7 @@ export default defineNuxtConfig({
       redirectOn: 'root',
       alwaysRedirect: false
     },
-    baseUrl: 'https://unipark.io',
+    baseUrl: 'https://unipark.uz',
     // SEO configuration
     seo: true,
     // Meta configuration for SEO
@@ -129,20 +131,7 @@ export default defineNuxtConfig({
   // Nitro config for sitemap & robots
   nitro: {
     prerender: {
-      routes: [
-        '/',
-        '/features',
-        '/pricing',
-        '/contact',
-        '/uz',
-        '/uz/features',
-        '/uz/pricing',
-        '/uz/contact',
-        '/en',
-        '/en/features',
-        '/en/pricing',
-        '/en/contact'
-      ],
+      routes: localizedSeoPaths,
       crawlLinks: true
     }
   },

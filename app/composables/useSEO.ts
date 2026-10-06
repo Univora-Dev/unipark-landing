@@ -11,7 +11,7 @@ export const useSEO = (options: SEOOptions) => {
   const config = useRuntimeConfig()
   const route = useRoute()
 
-  const canonicalUrl = options.canonical || `https://unipark.io${route.path}`
+  const canonicalUrl = options.canonical || `https://unipark.uz${route.path}`
   const imageUrl = options.image || '/og-image.jpg'
 
   useHead({
